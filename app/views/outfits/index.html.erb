@@ -1,0 +1,10 @@
+
+<% @outfits.each do |outfit| %>
+  <h1>name: <%= outfit.name %></h1>
+  <h2>price: <%= outfit.price %></h2>
+  <h2>theme: <%= outfit.theme %></h2>
+  <h2>description: </h2>
+  <p><%= outfit.description %></p>
+  <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
+  <%= link_to "details", outfits_url(outfit), method: :get %>
+<% end %>
