@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#landing'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  get 'style_page', to: "pages#style_page"
 
   get 'theme', to: "pages#theme"
 
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
 
   patch 'orders/:id', to: "orders#update"
 
-  post 'order_items', to: "order_items#create"
+  post 'order_outfits', to: "order_outfits#create"
 
-  delete 'order_items/:id', to: "order_items#destroy"
+  delete 'order_outfits/:id', to: "order_outfitss#destroy"
 end
