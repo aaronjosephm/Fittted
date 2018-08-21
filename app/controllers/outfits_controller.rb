@@ -6,6 +6,8 @@ class OutfitsController < ApplicationController
   end
 
   def index
+    @theme = params[:theme]
+    @outfits = Outfit.all(theme: @theme)
   end
 
   def show
