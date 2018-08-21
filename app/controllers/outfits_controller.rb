@@ -6,8 +6,9 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @theme = params[:theme]
-    @outfits = Outfit.all(theme: @theme)
+    @outfits = policy_scope(Outfit).where(theme: params[:theme])
+    # @theme = params[:theme]
+
   end
 
   def show
