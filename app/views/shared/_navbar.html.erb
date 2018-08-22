@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "shopping cart", order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "All orders", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "home", root_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
