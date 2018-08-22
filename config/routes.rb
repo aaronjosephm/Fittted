@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   get 'theme', to: "pages#theme"
 
-  get 'outfits', to: "outfits#index"
-
-  get 'outfits/:id', to: "outfits#show"
+  resources :outfits, only: [ :index, :show ]
 
   get 'orders/:id', to: "orders#show"
 
