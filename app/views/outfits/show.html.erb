@@ -11,6 +11,14 @@
 <h2>description: </h2>
 <p><%= @outfit.description %></p>
 <img src=<%= "#{@outfit.photo}" %> style="width: 20vw; height: auto;">
+<<<<<<< HEAD
+<% OutfitItem.all.each do |item|  %>
+  <% if item.outfit_id == @outfit.id %>
+    <h3><%= item.item.name %></h3>
+    <p>Details: <%= item.item.description %></p>
+    <p>Price: <%= item.item.price %></p>
+    <img src=<%= "#{item.item.photo}" %> style="width: 20vw; height: auto;">
+=======
 <%= form_tag(create_outfit_order_path(@outfit.id)) do -%>
   <% OutfitItem.all.each do |outfit_item|  %>
     <% if outfit_item.outfit_id == @outfit.id %>
@@ -20,6 +28,7 @@
       <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.sizes) %>
       <img src=<%= "#{outfit_item.item.photo}" %> style="width: 20vw; height: auto;">
     <% end %>
+>>>>>>> 6978c324dc8a0101fc54489e235fcf84e2cfd5d2
   <% end %>
   <div><%= submit_tag 'Add to cart' %></div>
 <% end -%>
