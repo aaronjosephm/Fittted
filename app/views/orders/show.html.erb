@@ -1,0 +1,19 @@
+<h1> made it to the show page for orders </h1>
+<% @order_outfits.each do |orderOutfit| %>
+  <h1><%= Outfit.find(orderOutfit.outfit_id).name %></h1>
+  <h2>price: <%= Outfit.find(orderOutfit.outfit_id).price %></h2>
+  <h2>theme: <%= Outfit.find(orderOutfit.outfit_id).theme %></h2>
+  <h2>description: </h2>
+  <p><%= Outfit.find(orderOutfit.outfit_id).description %></p>
+  <h1>Items: </h1>
+  <% OutfitItem.all.each do |outfit_item|  %>
+    <% if outfit_item.outfit_id == orderOutfit.outfit_id %>
+      <h3><%= outfit_item.item.name %></h3>
+      <p>Details: <%= outfit_item.item.description %></p>
+      <p>Price: <%= outfit_item.item.price %></p>
+      <p>Size: <%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size %></p>
+      <img src=<%= "#{outfit_item.item.photo}" %> style="width: 20vw; height: auto;">
+  <% end %>
+<% end %>
+
+<% end %>

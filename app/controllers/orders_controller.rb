@@ -20,7 +20,9 @@ class OrdersController < ApplicationController
   end
 
   def show
-
+    @order_outfits = policy_scope(OrderOutfit).where(order_id: @order.id)
+    @outfits = policy_scope(Outfit).all
+    @order_outfit_items = policy_scope(OrderOutfitItem).all
   end
 
   def update
@@ -37,6 +39,7 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
+    authorize @order
   end
 
   def order_params

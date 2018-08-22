@@ -1,15 +1,25 @@
+<% if flash[:order_added]  %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Oh YEAH</strong> U GONNA LOOK GUD
+  </div>
+<% end %>
+
 <h1><%= @outfit.name %></h1>
 <h2>price: <%= @outfit.price %></h2>
 <h2>theme: <%= @outfit.theme %></h2>
 <h2>description: </h2>
 <p><%= @outfit.description %></p>
 <img src=<%= "#{@outfit.photo}" %> style="width: 20vw; height: auto;">
-<% OutfitItem.all.each do |item|  %>
-  <% if item.outfit_id == @outfit.id %>
-    <h3><%= item.item.name %></h3>
-    <p>Details: <%= item.item.description %></p>
-    <p>Price: <%= item.item.price %></p>
-    <p>Size: <%= item.item.size %></p>
-    <img src=<%= "#{item.item.photo}" %> style="width: 20vw; height: auto;">
+<%= form_tag(create_outfit_order_path(@outfit.id)) do -%>
+  <% OutfitItem.all.each do |outfit_item|  %>
+    <% if outfit_item.outfit_id == @outfit.id %>
+      <h3><%= outfit_item.item.name %></h3>
+      <p>Details: <%= outfit_item.item.description %></p>
+      <p>Price: <%= outfit_item.item.price %></p>
+      <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.sizes) %>
+      <img src=<%= "#{outfit_item.item.photo}" %> style="width: 20vw; height: auto;">
+    <% end %>
   <% end %>
-<% end %>
+  <div><%= submit_tag 'Add to cart' %></div>
+<% end -%>

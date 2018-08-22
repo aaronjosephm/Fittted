@@ -24,6 +24,7 @@ class OutfitsController < ApplicationController
 
   def show
     # raise
+    authorize @outfit
   end
 
   def update
