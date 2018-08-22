@@ -119,6 +119,79 @@ beanie.save
 
 ####################################### Out fit 2 ##############################################
 
+blue_denim_jeans = Item.new(
+  name: "blue denim jeans",
+  price: "$75.00",
+  description: "Blue denim jeans - Fall design iteration 1.",
+  photo: "http://www.eurobistrori.com/images/Replayuk/RE322G04S-K11.jpg"
+  )
+
+blue_denim_jeans.save
+
+trench_jacket = Item.new(
+  name: "trench jacket",
+  price: "$100.00",
+  description: "Our company is one of the leading companies in offering Men's Denim Jacket to the client. This product is manufactured from top grade material and with the help of sophisticated technology as per the set industry standards and norms. Men's Denim Jacket is highly appreciated by the clients for good quality and attractive designs",
+  photo: "https://cdn.shopify.com/s/files/1/1230/9376/products/CGO-2407M_7EBlack_1268x1276.jpg"
+  )
+
+trench_jacket.save
+
+jumper_sweater = Item.new(
+  name: "Sleek Grey Jumper",
+  price: "$75.00",
+  description: "A soft, lightweight hoodie in jersey fabric, featuring an icon at left chest, pouch pocket and curved hem, Slim Fit, Imported",
+  photo: "https://www.repertoirefashion.co.uk/images/armani-jeans-mens-jumper-logo-crew-neck-grey-sweatshirt-p27621-75943_medium.jpg"
+  )
+
+jumper_sweater.save
+
+brown_boots = Item.new(
+  name: "Brown hiking boots",
+  price: "$100.00",
+  description: "With a technical look from the revolutionary '90s Equipment series, these shoes mix modern materials with retro runner style. They feature a sock-like knit upper and supportive TPU wings that wrap the heel. Detailed with textile 3-Stripes that merge with the moulded 3-Stripes on the midsole.",
+  photo: "https://d2fzf9bbqh0om5.cloudfront.net/images/481727/main/rebelsmarket_men_brown_combat_boot_men_lace_up_military_boots_handmade_leather_boot_boots_4.jpg"
+  )
+
+brown_boots.save
+
+urban_classic = Outfit.new(
+  name: "urban classic",
+  price: "$345.00",
+  theme: "casual outing",
+  description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
+  photo: "https://lh3.googleusercontent.com/vnMNRVr3MPUnijiS2SH9NOXMRiWPNSAEfFIEaX6vw5wt2YTxyKwhjmVqAnsiaiAyBlnE=s85"
+  )
+
+urban_classic.save
+
+shoes = OutfitItem.new(
+  item: brown_boots,
+  outfit: urban_classic
+  )
+
+shoes.save
+
+jeans = OutfitItem.new(
+  item: blue_denim_jeans,
+  outfit: urban_classic
+  )
+
+jeans.save
+
+  jacket = OutfitItem.new(
+  item: trench_jacket,
+  outfit: urban_classic
+  )
+
+jacket.save
+
+sweater = OutfitItem.new(
+  item: jumper_sweater,
+  outfit: urban_classic
+  )
+
+sweater.save
 
 
 
