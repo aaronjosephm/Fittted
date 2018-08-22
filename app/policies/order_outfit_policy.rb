@@ -8,4 +8,8 @@ class OrderOutfitPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    record.order.user == user
+  end
 end

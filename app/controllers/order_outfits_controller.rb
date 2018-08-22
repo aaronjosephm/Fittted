@@ -42,6 +42,9 @@ class OrderOutfitsController < ApplicationController
   end
 
   def destroy
+    authorize @order_outfit
+    @order_outfit.destroy
+    redirect_to order_show_url(current_user.cart.id)
   end
 
   private

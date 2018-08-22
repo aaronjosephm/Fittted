@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post 'outfits/:outfit_id/order', to: "order_outfits#create", as: "create_outfit_order"
 
+  delete 'orders/:id', to: "order_outfits#destroy", as: "delete_outfit_order"
+
   get 'orders/:id', to: "orders#show", as: "order_show"
 
   patch 'orders/:id', to: "orders#update"

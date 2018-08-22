@@ -15,5 +15,7 @@
       <img src=<%= "#{outfit_item.item.photo}" %> style="width: 20vw; height: auto;">
   <% end %>
 <% end %>
-
+  <%= link_to delete_outfit_order_path(orderOutfit), method: :delete do %>
+    <i class="fas fa-trash-alt"></i>
+  <% end %>
 <% end %>
