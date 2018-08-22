@@ -13,6 +13,8 @@ aaron = User.create(
   address: "5333 Casgrain AveMontreal, QC H2T 1X3"
   )
 
+####################################### Out fit 1 ##############################################
+
 black_denim_jeans = Item.new(
   name: "black denim jeans",
   price: "$75.00",
@@ -102,6 +104,8 @@ beanie = OutfitItem.new(
   )
 
 beanie.save
+
+####################################### Out fit 2 ##############################################
 
 
 
