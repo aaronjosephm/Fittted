@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'orders/:id', to: "orders#show", as: "order_show"
 
-  patch 'orders/:id', to: "orders#update"
+  patch 'orders/:id', to: "orders#update", as: "update_order"
 
   post 'orders', to: "order_outfits#create"
 

@@ -1,3 +1,9 @@
+<% if flash[:order_confirmed]  %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Order successfully confirmed!</strong>
+  </div>
+<% end %>
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <!-- link_to "+ Service", new_my_service_path(:account_id => acct.id) -->

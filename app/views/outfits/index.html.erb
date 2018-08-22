@@ -4,6 +4,6 @@
   <h2>theme: <%= outfit.theme %></h2>
   <h2>description: </h2>
   <p><%= outfit.description %></p>
-  <img src="Casual1.jpg" style="width: 20vw; height: auto;">
+  <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
   <%= link_to "details", outfit_url(id: outfit.id), method: :get %>
 <% end %>
