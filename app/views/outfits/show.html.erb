@@ -1,0 +1,15 @@
+<h1><%= @outfit.name %></h1>
+<h2>price: <%= @outfit.price %></h2>
+<h2>theme: <%= @outfit.theme %></h2>
+<h2>description: </h2>
+<p><%= @outfit.description %></p>
+<img src=<%= "#{@outfit.photo}" %> style="width: 20vw; height: auto;">
+<% OutfitItem.all.each do |item|  %>
+  <% if item.outfit_id == @outfit.id %>
+    <h3><%= item.item.name %></h3>
+    <p>Details: <%= item.item.description %></p>
+    <p>Price: <%= item.item.price %></p>
+    <p>Size: <%= item.item.size %></p>
+    <img src=<%= "#{item.item.photo}" %> style="width: 20vw; height: auto;">
+  <% end %>
+<% end %>

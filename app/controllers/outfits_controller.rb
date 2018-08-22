@@ -1,5 +1,7 @@
 class OutfitsController < ApplicationController
   before_action :set_outfit, only: [:show, :destroy, :edit]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def new
    @outfit = Outfit.new
    authorize @outfit
@@ -21,6 +23,7 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    # raise
   end
 
   def update
