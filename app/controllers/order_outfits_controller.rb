@@ -6,7 +6,7 @@ class OrderOutfitsController < ApplicationController
   end
 
   def create
-    @order_outfit = OrderOutfit.new(order_outfit_params)
+    @order_outfit = OrderOutfit.new(order_outfitg_params)
     @order_outfit.order = Order.find(params[:order_id])
     @order_outfit.outfit = Outfit.find(params[:outfit_id])
     if @order_outfit.save
@@ -40,6 +40,6 @@ class OrderOutfitsController < ApplicationController
   end
 
   def order_outfit_params
-    params.require(:order_outfits).permit(:outfit_id, :order_id)
+    params.require(:order_outfit).permit(:outfit_id, :order_id)
   end
 end

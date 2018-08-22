@@ -2,6 +2,7 @@ class CreateOrderOutfits < ActiveRecord::Migration[5.2]
   def change
     create_table :order_outfits do |t|
       t.references :outfit, foreign_key: true
+      t.references :order, foreign_key: true
 
       t.timestamps
     end
