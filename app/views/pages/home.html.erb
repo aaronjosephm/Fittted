@@ -4,16 +4,26 @@
       <strong>Order successfully confirmed!</strong>
   </div>
 <% end %>
-<div class="row" style="margin-top: 10vh; margin-left: 5vw; margin-right: 5vw;">
-    <div class="col-md-6" style="text-align: center; display: flex;">
-      <div class="home-card" style="background-image: url();" >
-      </div>
+
+<div class="row">
+    <div class="col-md-6" style="text-align: center; padding-right: 0;">
+      <%= link_to theme_url(:theme => "casual"), method: :get do %>
+
+        <div class="home-card home-card-casual" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+          <div class="home-card-gradient">
+            <p>CASUAL</p>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div class="col-md-6" style="text-align: center; display: flex;">
-      <div class="home-card" style="background-image: url();" >
-      </div>
+
+    <div class="col-md-6" style="text-align: center; padding-left: 0;">
+      <%= link_to theme_url(:theme => "formal"), method: :get do %>
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+          <div class="home-card-gradient">
+            <p>FORMAL</p>
+          </div>
+        </div>
+      <% end %>
     </div>
 </div>
-<!-- link_to "+ Service", new_my_service_path(:account_id => acct.id) -->
-<%= link_to "Formal", theme_url(:theme => "formal"), method: :get %>
-<%= link_to "Casual", theme_url(:theme => "casual"), method: :get %>
