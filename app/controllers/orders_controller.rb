@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     current_user.create_empty_cart
     flash[:order_confirmed] = true
     # redirect to payment page for stripe
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def edit
