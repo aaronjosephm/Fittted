@@ -1,2 +1,7 @@
-<h1>Landing page</h1>
-<%= link_to "Get fitted", home_url, method: :get %>
+<div class="landing-banner" style="background-image: url('<%= image_path 'landing.jpg' %>');">
+  <div class="landing-banner-gradient">
+    <%= link_to home_url, method: :get do %>
+      <div class="landing-page-button">GET FITTED</div>
+    <%end %>
+  </div>
+</div>

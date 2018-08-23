@@ -1,0 +1,24 @@
+.landing-banner {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.landing-banner-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.1));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E0D9C6;
+}
+
+.landing-banner-gradient a {
+  text-decoration: none;
+}

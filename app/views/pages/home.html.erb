@@ -8,15 +8,13 @@
 <div class="row">
     <div class="col-md-6" style="text-align: center; padding-right: 0;">
       <%= link_to theme_url(:theme => "casual"), method: :get do %>
-
-        <div class="home-card home-card-casual" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
           <div class="home-card-gradient">
             <p>CASUAL</p>
           </div>
         </div>
       <% end %>
     </div>
-
     <div class="col-md-6" style="text-align: center; padding-left: 0;">
       <%= link_to theme_url(:theme => "formal"), method: :get do %>
         <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
