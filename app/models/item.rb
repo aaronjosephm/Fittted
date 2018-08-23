@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  monetize :price_cents
+
   has_many :outfit_items
   has_many :order_outfit_items
 

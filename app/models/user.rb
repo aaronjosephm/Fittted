@@ -13,6 +13,6 @@ class User < ApplicationRecord
   end
 
   def cart
-    return self.orders.find_by(status: "pending")
+    self.orders.find_by(status: "pending") || self.orders.create(status: 'pending')
   end
 end
