@@ -4,8 +4,16 @@
       <strong>Order successfully confirmed!</strong>
   </div>
 <% end %>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row" style="margin-top: 10vh; margin-left: 5vw; margin-right: 5vw;">
+    <div class="col-md-6" style="text-align: center; display: flex;">
+      <div class="home-card" style="background-image: url();" >
+      </div>
+    </div>
+    <div class="col-md-6" style="text-align: center; display: flex;">
+      <div class="home-card" style="background-image: url();" >
+      </div>
+    </div>
+</div>
 <!-- link_to "+ Service", new_my_service_path(:account_id => acct.id) -->
 <%= link_to "Formal", theme_url(:theme => "formal"), method: :get %>
 <%= link_to "Casual", theme_url(:theme => "casual"), method: :get %>
