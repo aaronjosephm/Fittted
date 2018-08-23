@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   post 'orders', to: "order_outfits#create"
 
   delete 'order_outfits/:id', to: "order_outfitss#destroy"
+
+  get 'order/:order_id/payments/new', to: 'payments#new', as: 'new_payments'
+  post 'order/:order_id/payments', to: 'payments#create', as: 'payments'
+
 end
