@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :destroy, :edit]
+  before_action :set_order, only: [:destroy, :edit]
 
   def new
     @order = Order.new
@@ -20,10 +20,26 @@ class OrdersController < ApplicationController
   end
 
   def show
-
+    @order = current_user.cart
+    authorize @order
+    @order_outfits = policy_scope(OrderOutfit).where(order_id: @order.id)
+    @outfits = policy_scope(Outfit).all
+    @order_outfit_items = policy_scope(OrderOutfitItem).all
+    @total_price = 0
+    @order_outfits.all.each do |orderOutfit|
+      @total_price += Outfit.where(id: orderOutfit.outfit_id).inject(0){ |sum,e| sum + e.price.to_i }
+    end
   end
 
   def update
+    @order = current_user.cart
+    authorize @order
+    @order.status = "confirmed"
+    @order.save
+    current_user.create_empty_cart
+    flash[:order_confirmed] = true
+    # redirect to payment page for stripe
+    redirect_to home_path
   end
 
   def edit
@@ -37,6 +53,7 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
+    authorize @order
   end
 
   def order_params

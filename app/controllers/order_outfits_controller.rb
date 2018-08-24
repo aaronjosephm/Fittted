@@ -6,13 +6,24 @@ class OrderOutfitsController < ApplicationController
   end
 
   def create
-    @order_outfit = OrderOutfit.new(order_outfit_params)
-    @order_outfit.order = Order.find(params[:order_id])
-    @order_outfit.outfit = Outfit.find(params[:outfit_id])
+    @order_outfit = OrderOutfit.new(order: current_user.cart, outfit: Outfit.find(params[:outfit_id]))
+
+    authorize @order_outfit
+
+    params[:outfit_items].each do |outfitItem|
+      order_outfit_item = OrderOutfitItem.new(item: Item.find(outfitItem[0]), order_outfit: @order_outfit, size: outfitItem[1])
+      order_outfit_item.save
+    end
+
     if @order_outfit.save
       puts "order_outfit has been saved."
+      flash[:order_added] = true
+      redirect_to outfit_path(@order_outfit.outfit)
+      # redirect somewhere, maybe same page ? and set a flash[:order_added] = true
+      # somewhere in the page where you redirect, "<% if flash[:order_added] %> <!-- code for popup --> <% end %>""
     else
       puts "order_outfit hasn't been saved."
+      # back to form, display errors
     end
   end
 
@@ -31,15 +42,14 @@ class OrderOutfitsController < ApplicationController
   end
 
   def destroy
+    authorize @order_outfit
+    @order_outfit.destroy
+    redirect_to order_show_url(current_user.cart.id)
   end
 
   private
 
   def set_order_outfit
     @order_outfit = OrderOutfit.find(params[:id])
-  end
-
-  def order_outfit_params
-    params.require(:order_outfits).permit(:outfit_id, :order_id)
   end
 end

@@ -1,11 +1,68 @@
-<% if @theme == "formal" %>
-  <h1>Formal</h1>
+<% if @theme == "casual" %>
+  <div class="row">
+      <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "casual outing"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+            <div class="home-card-gradient">
+              <p>WEEKEND CHILL</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "casual outing"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'date_night.png' %>');">
+            <div class="home-card-gradient">
+              <p>DATE NIGHT</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+       <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "6"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+            <div class="home-card-gradient">
+              <p>BUSINESS CASUAL</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <!-- <h1>Formal</h1>
   <h2><%= link_to "Theme 1", outfits_url(:theme => "1"), method: :get %></h2>
   <h2><%= link_to "Theme 2", outfits_url(:theme => "2"), method: :get %></h2>
-  <h2><%= link_to "Theme 3", outfits_url(:theme => "3"), method: :get %></h2>
+  <h2><%= link_to "Theme 3", outfits_url(:theme => "3"), method: :get %></h2> -->
 <% else %>
-  <h1>Casual</h1>
-  <h2><%= link_to "Theme 4", outfits_url(:theme => "4"), method: :get %></h2>
+  <div class="row">
+      <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "1"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+            <div class="home-card-gradient">
+              <p>CASUAL</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "2"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+            <div class="home-card-gradient">
+              <p>FORMAL</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+       <div class="col-md-4" style="text-align: center; padding: 0;">
+        <%= link_to outfits_url(:theme => "3"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+            <div class="home-card-gradient">
+              <p>FORMAL</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <!-- <h2><%= link_to "Theme 4", outfits_url(:theme => "4"), method: :get %></h2>
   <h2><%= link_to "Casual outing", outfits_url(:theme => "casual outing"), method: :get %></h2>
-  <h2><%= link_to "Theme 6", outfits_url(:theme => "6"), method: :get %></h2>
+  <h2><%= link_to "Theme 6", outfits_url(:theme => "6"), method: :get %></h2> -->
 <% end %>

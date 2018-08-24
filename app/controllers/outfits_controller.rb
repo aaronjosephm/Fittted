@@ -19,11 +19,13 @@ class OutfitsController < ApplicationController
   end
 
   def index
+
     @outfits = policy_scope(Outfit).where(theme: params[:theme])
   end
 
   def show
-    # raise
+
+    authorize @outfit
   end
 
   def update

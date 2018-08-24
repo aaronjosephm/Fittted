@@ -1,0 +1,115 @@
+.landing-page-button {
+  color: #E0D9C6;
+  font-size: 25px;
+  border: 2px solid #E0D9C6;
+  padding: 10px;
+  letter-spacing: 2px;
+  border-radius: 1px;
+}
+
+.landing-page-button a {
+  text-decoration: none !important;
+}
+
+.landing-page-button:hover {
+  opacity: 0.6;
+  transition: all 0.9s ease 0s;
+  text-decoration: none;
+}
+
+.add-cart-button {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  background-color: #F9DC5C;
+  padding: 10px;
+  border-radius: 1px;
+  margin-top: 30vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.add-cart-button:hover {
+  color: black;
+  opacity: 0.5;
+  transition: all 0.9s ease 0s;
+}
+
+.place-order-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  background-color: #F9DC5C;
+  border-radius: 1px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 15vw;
+  height: 8vh;
+}
+
+.place-order-button:hover {
+  color: black;
+  opacity: 0.5;
+  transition: all 0.9s ease 0s;
+  text-decoration: none;
+}
+
+.delete-order-outfit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 1px;
+  width: 15vw;
+  height: 8vh;
+}
+
+.delete-button-container > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.delete-button-container > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.delete-button-container > a {
+  position: relative;
+  color: #000;
+  text-decoration: underline;
+}
+
+.delete-button-container > a:hover {
+  color: #000;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.delete-button-container {
+  font-size: 15px;
+}
+
+.delete-order-outfit-button:hover {
+  color: black;
+  opacity: 0.5;
+  transition: all 0.9s ease 0s;
+  text-decoration: none;
+}

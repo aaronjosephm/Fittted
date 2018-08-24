@@ -1,15 +1,38 @@
-<h1><%= @outfit.name %></h1>
-<h2>price: <%= @outfit.price %></h2>
-<h2>theme: <%= @outfit.theme %></h2>
-<h2>description: </h2>
-<p><%= @outfit.description %></p>
-<img src=<%= "#{@outfit.photo}" %> style="width: 20vw; height: auto;">
-<% OutfitItem.all.each do |item|  %>
-  <% if item.outfit_id == @outfit.id %>
-    <h3><%= item.item.name %></h3>
-    <p>Details: <%= item.item.description %></p>
-    <p>Price: <%= item.item.price %></p>
-    <p>Size: <%= item.item.size %></p>
-    <img src=<%= "#{item.item.photo}" %> style="width: 20vw; height: auto;">
-  <% end %>
+<% if flash[:order_added]  %>
+  <div class="alert alert-success alert-dismissible" role="alert" style="margin-top: 10vh;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Item successfully added to cart!</strong>
+  </div>
 <% end %>
+
+<%= form_tag(create_outfit_order_path(@outfit.id)) do -%>
+<div class="row" style="margin-bottom: 5vh;">
+  <div class="col-md-6" style="text-align: center; padding: 5vw; margin-top: 5vh;">
+      <div class="outfit-card-image" style="background-image: url('<%= image_path @outfit.photo %>');">
+      </div>
+  </div>
+  <div class="col-md-6" style="text-align: center; padding: 5vw; margin-top: 5vh;">
+      <div class="outfit-card-description">
+        <h1><%= @outfit.name %></h1>
+        <p>$ <%= @outfit.price %>.00</p>
+        <p><%= @outfit.description %></p>
+        <div><%= submit_tag 'Add to cart', class: "add-cart-button" %></div>
+      </div>
+    </div>
+  </div>
+<div class="row" style="display: flex; justify-content: space-between;">
+  <% OutfitItem.all.each do |outfit_item|  %>
+    <% if outfit_item.outfit_id == @outfit.id %>
+      <div class="col-md-2">
+        <div class="outfit-item-card" style="background-image: url('<%= image_path outfit_item.item.photo %>');">
+          <p><%= outfit_item.item.name %></p>
+          <p>Price: $<%= outfit_item.item.price %>.00</p>
+          <p><%= outfit_item.item.description %></p>
+        </div>
+        <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.sizes) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
+

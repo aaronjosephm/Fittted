@@ -1,5 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<!-- link_to "+ Service", new_my_service_path(:account_id => acct.id) -->
-<%= link_to "Formal", theme_url(:theme => "formal"), method: :get %>
-<%= link_to "Casual", theme_url(:theme => "casual"), method: :get %>
+<% if flash[:order_confirmed]  %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Order successfully confirmed!</strong>
+  </div>
+<% end %>
+
+<div class="row">
+    <div class="col-md-6" style="text-align: center; padding-right: 0;">
+      <%= link_to theme_url(:theme => "casual"), method: :get do %>
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+          <div class="home-card-gradient">
+            <p>CASUAL</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6" style="text-align: center; padding-left: 0;">
+      <%= link_to theme_url(:theme => "formal"), method: :get do %>
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'Formal_Test.jpg' %>');">
+          <div class="home-card-gradient">
+            <p>FORMAL</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
