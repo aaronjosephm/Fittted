@@ -35,3 +35,25 @@
   opacity: 0.5;
   transition: all 0.9s ease 0s;
 }
+
+.place-order-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  background-color: #F9DC5C;
+  border-radius: 1px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 15vw;
+  height: 8vh;
+}
+
+.place-order-button:hover {
+  color: black;
+  opacity: 0.5;
+  transition: all 0.9s ease 0s;
+  text-decoration: none;
+}

@@ -25,6 +25,10 @@ class OrdersController < ApplicationController
     @order_outfits = policy_scope(OrderOutfit).where(order_id: @order.id)
     @outfits = policy_scope(Outfit).all
     @order_outfit_items = policy_scope(OrderOutfitItem).all
+    @total_price = 0
+    @order_outfits.all.each do |orderOutfit|
+      @total_price += Outfit.where(id: orderOutfit.outfit_id).inject(0){ |sum,e| sum + e.price.to_i }
+    end
   end
 
   def update

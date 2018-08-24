@@ -36,3 +36,11 @@
     </div>
   </div>
 <% end %>
+<div class="row" style="display: flex; justify-content: space-between;">
+  <h1>Total Price: $<%= @total_price.to_s %>.00</h1>
+</div>
+<div class="row" style="display: flex; justify-content: space-between;">
+  <%= link_to new_payments_path(@order) do %>
+    <div class="place-order-button">Place Order</div>
+  <% end %>
+</div>
