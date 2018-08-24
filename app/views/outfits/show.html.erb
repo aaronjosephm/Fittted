@@ -5,6 +5,23 @@
   </div>
 <% end %>
 
+<%= form_tag(create_outfit_order_path(@outfit.id)) do -%>
+<div class="row">
+    <div class="col-md-6" style="text-align: center; padding: 5vw; margin-top: 5vh;">
+        <div class="outfit-card-image" style="background-image: url('<%= image_path @outfit.photo %>');">
+        </div>
+    </div>
+    <div class="col-md-6" style="text-align: center; padding: 5vw; margin-top: 5vh;">
+        <div class="outfit-card-description">
+          <h1><%= @outfit.name %></h1>
+          <p>$ <%= @outfit.price %>.00</p>
+          <p><%= @outfit.description %></p>
+          <div><%= submit_tag 'Add to cart', class: "add-cart-button" %></div>
+        </div>
+    </div>
+  </div>
+<% end %>
+
 <h1><%= @outfit.name %></h1>
 <h2>price: <%= @outfit.price %></h2>
 <h2>theme: <%= @outfit.theme %></h2>
@@ -23,3 +40,24 @@
   <% end %>
   <div><%= submit_tag 'Add to cart' %></div>
 <% end -%>
+
+<!-- <div class="row">
+    <div class="col-md-6" style="text-align: center; padding: 5vw;">
+      <%= link_to theme_url(:theme => "casual"), method: :get do %>
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+          <div class="home-card-gradient">
+            <p>CASUAL</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6" style="text-align: center; padding: 5vw;">
+      <%= link_to theme_url(:theme => "formal"), method: :get do %>
+        <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+          <div class="home-card-gradient">
+            <p>FORMAL</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div> -->

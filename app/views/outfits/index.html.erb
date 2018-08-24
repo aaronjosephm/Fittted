@@ -1,9 +1,17 @@
-<% @outfits.each do |outfit| %>
-  <h1>name: <%= outfit.name %></h1>
-  <h2>price: <%= outfit.price %></h2>
-  <h2>theme: <%= outfit.theme %></h2>
-  <h2>description: </h2>
-  <p><%= outfit.description %></p>
-  <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
-  <%= link_to "details", outfit_url(id: outfit.id), method: :get %>
-<% end %>
+<div class="row">
+  <% @outfits.each do |outfit| %>
+    <div class="col-md-4" style="text-align: center; padding: 0; margin-top: 20vh;">
+      <%= link_to outfit_url(id: outfit.id), method: :get do %>
+        <div class="home-card-formal">
+          <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
+          <p>name: <%= outfit.name %></p>
+          <h2>price: <%= outfit.price %></h2>
+          <!-- <h2>theme: <%= outfit.theme %></h2>
+          <h2>description: </h2>
+          <p><%= outfit.description %></p> -->
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

@@ -16,3 +16,23 @@
   transition: all 0.9s ease 0s;
   text-decoration: none;
 }
+
+.add-cart-button {
+
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  background-color: #F9DC5C;
+  padding: 10px;
+  border-radius: 1px;
+  margin-top: 30vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.add-cart-button:hover {
+  color: black;
+  opacity: 0.5;
+  transition: all 0.9s ease 0s;
+}

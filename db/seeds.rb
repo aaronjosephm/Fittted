@@ -77,7 +77,7 @@ double_denim = Outfit.new(
   price: 345,
   theme: "casual outing",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "Casual.jpg"
+  photo: "https://i.pinimg.com/originals/4b/a4/14/4ba41439ca87212bb6f19b76b42b3b99.jpg"
   )
 
 double_denim.save!
@@ -160,7 +160,7 @@ urban_classic = Outfit.new(
   price: 345,
   theme: "casual outing",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "https://lh3.googleusercontent.com/vnMNRVr3MPUnijiS2SH9NOXMRiWPNSAEfFIEaX6vw5wt2YTxyKwhjmVqAnsiaiAyBlnE=s85"
+  photo: "https://i.pinimg.com/originals/b7/34/9b/b7349b5d9e7ba8423d069a561bbbdd1c.jpg"
   )
 
 urban_classic.save!
