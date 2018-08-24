@@ -12,9 +12,14 @@
 #size-value {
   border: 2px solid #E0D9C6;
   color: #E0D9C6;
-  margin-right: 5vw;
-  width: 4vw;
+  margin-right: 3vw;
+  width: 2vw;
   text-align: center;
+  margin-bottom: 0;
+}
+
+#size-value p {
+  margin-bottom: 0 !important;
 }
 
 #size-cluster {
