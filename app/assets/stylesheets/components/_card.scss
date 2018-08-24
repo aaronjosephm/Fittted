@@ -104,4 +104,29 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+.outfit-item-card {
+  height: 30vh;
+  width: 100%;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.outfit-item-card p {
+  visibility: hidden;
+}
+
+.outfit-item-card:hover {
+  background-image: white !important;
+  transition: all 0.9s ease;
+  color: black;
+}
+
+.outfit-item-card:hover p {
+  visibility: visible;
+  overflow: visible;
+}
+
+
 
