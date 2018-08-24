@@ -22,3 +22,14 @@
 .landing-banner-gradient a {
   text-decoration: none;
 }
+
+.size-select-container {
+  margin-top: 1vh;
+  display: flex;
+  justify-content: space-between
+  // text-align: right;
+}
+
+.size-select-container select {
+  border-radius: 0 !important;
+}

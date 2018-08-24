@@ -16,13 +16,50 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .home-card:hover {
-  // opacity: 0.5;
+  transform: scale(1.02);
+  overflow: hidden;
+}
 
-  transition: all 0.9s ease;
+#casual {
+  background-image: asset-url("casual.jpeg");
+}
 
+#formal {
+  background-image: asset-url('Formal_Test.jpg');
+}
+
+#casual:hover {
+  transform: scale(1.02);
+}
+
+#formal:hover {
+  transform: scale(1.02);
+}
+
+#date-night {
+  background-image: asset-url("casual.jpeg");
+}
+
+#date-night:hover {
+  background-image: asset-url("casual.jpeg");
+  background-position: 30% 70%;
+}
+
+// #business-casual {
+//   background-image: ;
+// }
+
+#weekend-chill {
+  background-image: asset-url("casual.jpeg");
+}
+
+#weekend-chill:hover {
+  background-image: asset-url("casual.jpeg");
+  background-position: 20% 20%;
 }
 
 .home-card-gradient {
@@ -86,13 +123,17 @@
 
 .outfit-card-description h1 {
   margin-top: 0 !important;
-  padding-top: 5vh;
+  padding-top: 8vh;
+  font-size: 27px;
+  letter-spacing: 1px;
 }
 
 .outfit-card-description p {
   margin-top: 0 !important;
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 5vh;
+  letter-spacing: 1px;
+  line-height: 30px;
 }
 
 .outfit-card-image {
@@ -105,12 +146,13 @@
 }
 
 .outfit-item-card {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 2vh;
 }
 
 .outfit-item-card p {
