@@ -19,7 +19,7 @@
                   <p>Size</p>
                 </div>
                 <div id="size-value">
-                  <p><%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size.first %></p>
+                  <p><%= OrderOutfitItem.find_by(item_id: outfit_item.item.id, order_outfit_id: orderOutfit.id).size.first %></p>
                 </div>
               </div>
             </div>
