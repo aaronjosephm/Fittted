@@ -1,7 +1,7 @@
 <h1 style="text-align: center; margin-top: 15vh;"> Shopping Cart </h1>
 <% @order_outfits.each do |orderOutfit| %>
 <div class="row">
-  <div class="col-md-6" style="text-align: center; padding-left: 10vw; margin-top: 5vh;">
+  <div class="col-md-6" style="text-align: center; padding-left: 10vw; margin-top: 5vh; padding-right: 0;">
       <div class="order-card-img" style="background-image: url('<%= image_path Outfit.find(orderOutfit.outfit_id).photo %>');">
       </div>
     </div>
@@ -26,12 +26,11 @@
           <% end %>
         <% end %>
         <p>$<%= Outfit.find(orderOutfit.outfit_id).price %>.00</p>
-        <%= link_to delete_outfit_order_path(orderOutfit), method: :delete do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-        <%= link_to new_payments_path(@order) do %>
-          <i class="fas fa-check-square"></i>
-        <% end %>
+        <div class="row" style="display: flex; justify-content: space-between;">
+          <div class="delete-button-container">
+            <%= link_to "Remove", delete_outfit_order_path(orderOutfit), method: :delete %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
