@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   def new
+    raise
     @order = Order.find(params[:order_id])
     authorize(@order)
 

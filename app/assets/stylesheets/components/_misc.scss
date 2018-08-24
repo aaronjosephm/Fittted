@@ -1,0 +1,23 @@
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+#size {
+  margin-right: 4vw;
+}
+
+#size-value {
+  border: 2px solid #E0D9C6;
+  color: #E0D9C6;
+  margin-right: 5vw;
+  width: 4vw;
+  text-align: center;
+}
+
+#size-cluster {
+  display: flex;
+  justify-content: space-between;
+}

@@ -136,9 +136,15 @@
   background-color: white;
 }
 
-.order-card h4 {
+.order-card h2 {
   margin-top: 0 !important;
-  padding-top: 5vh;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+}
+
+.order-card p {
+  padding-top: 10px;
+  font-size: 30px;
 }
 
 .order-card-img {

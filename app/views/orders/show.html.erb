@@ -5,12 +5,24 @@
       <div class="order-card-img" style="background-image: url('<%= image_path Outfit.find(orderOutfit.outfit_id).photo %>');">
       </div>
     </div>
-    <div class="col-md-6" style="text-align: center; padding-right: 10vw; padding-left: 0; margin-top: 5vh;">
+    <div class="col-md-6" style="text-align: center; padding-right: 5vw; padding-left: 0; margin-top: 5vh;">
       <div class="order-card">
-        <h4><strong><%= Outfit.find(orderOutfit.outfit_id).name %></strong></h4>
+        <h2><strong><%= Outfit.find(orderOutfit.outfit_id).name %></strong></h2>
         <% OutfitItem.all.each do |outfit_item|  %>
           <% if outfit_item.outfit_id == orderOutfit.outfit_id %>
-            <p><%= outfit_item.item.name %> Size: <%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size %></p>
+            <div class="order-item">
+              <div id="name">
+                <p><%= outfit_item.item.name %></p>
+              </div>
+              <div id="size-cluster">
+                <div id="size">
+                  <p>Size</p>
+                </div>
+                <div id="size-value">
+                  <p><%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size.first %></p>
+                </div>
+              </div>
+            </div>
           <% end %>
         <% end %>
         <p>$<%= Outfit.find(orderOutfit.outfit_id).price %>.00</p>
@@ -22,7 +34,5 @@
         <% end %>
       </div>
     </div>
-<% end %>
-<%= link_to new_payments_path(@order) do %>
-  <i class="fas fa-check-square"></i>
+  </div>
 <% end %>
