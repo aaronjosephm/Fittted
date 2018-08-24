@@ -129,14 +129,22 @@
 }
 
 .order-card {
+  text-align: left;
+  padding-left: 5vw;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  height: 60vh;
+  height: 80vh;
   background-color: white;
 }
 
-.order-card-img {
-  width: 50%;
-  height: 60vh;
+.order-card h4 {
+  margin-top: 0 !important;
+  padding-top: 5vh;
+}
 
+.order-card-img {
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 80vh;
 }
 

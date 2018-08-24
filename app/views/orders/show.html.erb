@@ -1,34 +1,28 @@
 <h1 style="text-align: center; margin-top: 15vh;"> Shopping Cart </h1>
 <% @order_outfits.each do |orderOutfit| %>
 <div class="row">
-  <div class="col-md-12" style="text-align: center; padding-left: 10vw; padding-right: 10vw; margin-top: 5vh;">
-    <div class="order-card">
+  <div class="col-md-6" style="text-align: center; padding-left: 10vw; margin-top: 5vh;">
       <div class="order-card-img" style="background-image: url('<%= image_path Outfit.find(orderOutfit.outfit_id).photo %>');">
       </div>
-      <p><%= Outfit.find(orderOutfit.outfit_id).name %></p>
-      <p>price: <%= Outfit.find(orderOutfit.outfit_id).price %></p>
-      <p>theme: <%= Outfit.find(orderOutfit.outfit_id).theme %></p>
-      <p>description: </p>
-      <p><%= Outfit.find(orderOutfit.outfit_id).description %></p>
-      <p>Items: </p>
-      <% OutfitItem.all.each do |outfit_item|  %>
-        <% if outfit_item.outfit_id == orderOutfit.outfit_id %>
-          <p><%= outfit_item.item.name %></p>
-          <p>Details: <%= outfit_item.item.description %></p>
-          <p>Price: <%= outfit_item.item.price %></p>
-          <p>Size: <%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size %></p>
-          <img src=<%= "#{outfit_item.item.photo}" %> style="width: 20vw; height: auto;">
-      <% end %>
-    <% end %>
-      <%= link_to delete_outfit_order_path(orderOutfit), method: :delete do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
     </div>
-  </div>
-</div>
+    <div class="col-md-6" style="text-align: center; padding-right: 10vw; padding-left: 0; margin-top: 5vh;">
+      <div class="order-card">
+        <h4><strong><%= Outfit.find(orderOutfit.outfit_id).name %></strong></h4>
+        <% OutfitItem.all.each do |outfit_item|  %>
+          <% if outfit_item.outfit_id == orderOutfit.outfit_id %>
+            <p><%= outfit_item.item.name %> Size: <%= OrderOutfitItem.find_by(item_id: outfit_item.item.id).size %></p>
+          <% end %>
+        <% end %>
+        <p>$<%= Outfit.find(orderOutfit.outfit_id).price %>.00</p>
+        <%= link_to delete_outfit_order_path(orderOutfit), method: :delete do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        <%= link_to new_payments_path(@order) do %>
+          <i class="fas fa-check-square"></i>
+        <% end %>
+      </div>
+    </div>
 <% end %>
-
-
 <%= link_to new_payments_path(@order) do %>
   <i class="fas fa-check-square"></i>
 <% end %>
