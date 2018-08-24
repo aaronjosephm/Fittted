@@ -160,7 +160,7 @@ urban_classic = Outfit.new(
   price: 345,
   theme: "casual outing",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "https://i.pinimg.com/originals/b7/34/9b/b7349b5d9e7ba8423d069a561bbbdd1c.jpg"
+  photo: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Fvp%2F4d6bf24622b26340746544cf20db2f9d%2F5C0465E7%2Ft51.2885-15%2Fe35%2F29739482_166674707483196_7473541788540600320_n.jpg"
   )
 
 urban_classic.save!

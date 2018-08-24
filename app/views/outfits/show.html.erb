@@ -23,7 +23,7 @@
 <div class="row" style="display: flex; justify-content: space-between;">
   <% OutfitItem.all.each do |outfit_item|  %>
     <% if outfit_item.outfit_id == @outfit.id %>
-      <div class="col-md-2">
+      <div class="col-md-3" style="padding-right: 3vw; padding-left: 3vw;">
         <div class="outfit-item-card" style="background-image: url('<%= image_path outfit_item.item.photo %>');">
           <p><%= outfit_item.item.name %></p>
           <p>Price: $<%= outfit_item.item.price %>.00</p>
