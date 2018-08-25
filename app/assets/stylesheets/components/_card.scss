@@ -111,6 +111,17 @@
   transition: all 0.9s ease 0s;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    visibility: hidden;
+    color: black;
+}
+
 .outfit-card-description {
   height: 100vh;
   background-color: white;
@@ -170,6 +181,11 @@
   opacity: 0.8;
 }
 
+.outfit-item-card:hover hr {
+  visibility: visible;
+  color: black;
+}
+
 .outfit-item-card {
   height: 40vh;
   width: 100%;
@@ -182,9 +198,28 @@
 
 .outfit-item-card p {
   visibility: hidden;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.outfit-item-wrapper {
+  height: 40vh;
+  width: 100%;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 2vh;
+  padding: 5px;
+}
+
+.outfit-item-wrapper:hover {
+  background-color: white;
+  transition: all 0.9s ease;
 }
 
 .outfit-item-card:hover {
+  background-color: white;
   background-image: white !important;
   transition: all 0.9s ease;
   color: black;
