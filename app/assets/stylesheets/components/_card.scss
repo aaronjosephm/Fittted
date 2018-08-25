@@ -145,6 +145,31 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+.outfit-index-card {
+  height: auto;
+  width: 20vw;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.outfit-subheader {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.outfit-index-card-wrapper > a {
+  text-decoration: none;
+  color: black;
+}
+
+.outfit-index-card:hover {
+  transition: all 0.9s ease 0s;
+  opacity: 0.8;
+}
+
 .outfit-item-card {
   height: 40vh;
   width: 100%;

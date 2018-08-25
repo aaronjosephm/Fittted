@@ -21,6 +21,7 @@ class OutfitsController < ApplicationController
   def index
 
     @outfits = policy_scope(Outfit).where(theme: params[:theme])
+    @theme = params[:theme]
   end
 
   def show
