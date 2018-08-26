@@ -150,6 +150,8 @@
 
 .delete-button-container {
   font-size: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .delete-order-outfit-button:hover {
