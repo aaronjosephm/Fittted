@@ -176,6 +176,11 @@ hr {
   color: black;
 }
 
+.outfit-index-card-wrapper:hover > a {
+  text-decoration: none;
+  color: black;
+}
+
 .outfit-index-card:hover {
   transition: all 0.9s ease 0s;
   opacity: 0.8;
