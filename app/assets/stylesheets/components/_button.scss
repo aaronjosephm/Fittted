@@ -21,13 +21,14 @@
   color: white;
   text-align: center;
   font-size: 25px;
-  background-color: #F9DC5C;
+  background-color: #C3AC96;
   padding: 10px;
   border-radius: 1px;
   margin-top: 30vh;
   padding-left: 10px;
   padding-right: 10px;
-  width: 100%;
+  width: 40%;
+  opacity: 0.8;
 }
 
 .add-cart-button:hover {
@@ -43,18 +44,23 @@
   color: white;
   text-align: center;
   font-size: 25px;
-  background-color: #F9DC5C;
+  background-color: #C3AC96;
   border-radius: 1px;
   margin-top: 10vh;
   margin-bottom: 10vh;
   width: 15vw;
   height: 8vh;
+  opacity: 0.8;
 }
 
 .place-order-button:hover {
   color: black;
   opacity: 0.5;
   transition: all 0.9s ease 0s;
+  text-decoration: none;
+}
+
+.place-order-wrapper > a {
   text-decoration: none;
 }
 
@@ -112,4 +118,11 @@
   opacity: 0.5;
   transition: all 0.9s ease 0s;
   text-decoration: none;
+}
+
+.size-select {
+  width: 100%;
+  border: 2px;
+  border-radius: 0 !important;
+  background-color: white !important;
 }

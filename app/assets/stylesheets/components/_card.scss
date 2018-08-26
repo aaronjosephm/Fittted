@@ -16,13 +16,50 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .home-card:hover {
-  // opacity: 0.5;
+  transform: scale(1.02);
+  overflow: hidden;
+}
 
-  transition: all 0.9s ease;
+#casual {
+  background-image: asset-url("casual.jpeg");
+}
 
+#formal {
+  background-image: asset-url('Formal_Test.jpg');
+}
+
+#casual:hover {
+  transform: scale(1.02);
+}
+
+#formal:hover {
+  transform: scale(1.02);
+}
+
+#date-night {
+  background-image: asset-url("casual.jpeg");
+}
+
+#date-night:hover {
+  background-image: asset-url("casual.jpeg");
+  background-position: 30% 70%;
+}
+
+// #business-casual {
+//   background-image: ;
+// }
+
+#weekend-chill {
+  background-image: asset-url("casual.jpeg");
+}
+
+#weekend-chill:hover {
+  background-image: asset-url("casual.jpeg");
+  background-position: 20% 20%;
 }
 
 .home-card-gradient {
@@ -74,6 +111,17 @@
   transition: all 0.9s ease 0s;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    visibility: hidden;
+    color: black;
+}
+
 .outfit-card-description {
   height: 100vh;
   background-color: white;
@@ -86,13 +134,17 @@
 
 .outfit-card-description h1 {
   margin-top: 0 !important;
-  padding-top: 5vh;
+  padding-top: 8vh;
+  font-size: 27px;
+  letter-spacing: 1px;
 }
 
 .outfit-card-description p {
   margin-top: 0 !important;
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 5vh;
+  letter-spacing: 1px;
+  line-height: 30px;
 }
 
 .outfit-card-image {
@@ -104,20 +156,70 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.outfit-item-card {
-  height: 30vh;
-  width: 100%;
+.outfit-index-card {
+  height: auto;
+  width: 20vw;
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+.outfit-subheader {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.outfit-index-card-wrapper > a {
+  text-decoration: none;
+  color: black;
+}
+
+.outfit-index-card:hover {
+  transition: all 0.9s ease 0s;
+  opacity: 0.8;
+}
+
+.outfit-item-card:hover hr {
+  visibility: visible;
+  color: black;
+}
+
+.outfit-item-card {
+  height: 40vh;
+  width: 100%;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 2vh;
+}
+
 .outfit-item-card p {
   visibility: hidden;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.outfit-item-wrapper {
+  height: 40vh;
+  width: 100%;
+  background-position: 50% 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 2vh;
+  padding: 5px;
+}
+
+.outfit-item-wrapper:hover {
+  background-color: white;
+  transition: all 0.9s ease;
 }
 
 .outfit-item-card:hover {
+  background-color: white;
   background-image: white !important;
   transition: all 0.9s ease;
   color: black;

@@ -1,16 +1,22 @@
+<h1 style="margin-top: 15vh; text-align: center;"> All <%= @theme.capitalize %> Outfits </h1>
+
 <div class="row">
   <% @outfits.each do |outfit| %>
-    <div class="col-md-4" style="text-align: center; padding: 0; margin-top: 20vh;">
-      <%= link_to outfit_url(id: outfit.id), method: :get do %>
-        <div class="home-card-formal">
-          <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
-          <p>name: <%= outfit.name %></p>
-          <h2>price: <%= outfit.price %></h2>
-          <!-- <h2>theme: <%= outfit.theme %></h2>
-          <h2>description: </h2>
-          <p><%= outfit.description %></p> -->
-        </div>
-      <% end %>
+    <div class="col-md-4" style="text-align: center; display: flex; justify-content: space-around; margin-top: 5vh;">
+      <div class="outfit-index-card-wrapper">
+        <%= link_to outfit_url(id: outfit.id), method: :get do %>
+          <div class="outfit-index-card">
+            <img src=<%= "#{outfit.photo}" %> style="width: 20vw; height: auto;">
+            <div class="outfit-subheader">
+              <p><%= outfit.name %></p>
+              <p>$<%= outfit.price %>.00</p>
+            </div>
+            <!-- <h2>theme: <%= outfit.theme %></h2>
+            <h2>description: </h2>
+            <p><%= outfit.description %></p> -->
+          </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

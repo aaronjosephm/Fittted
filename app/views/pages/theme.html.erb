@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-md-4" style="text-align: center; padding: 0;">
         <%= link_to outfits_url(:theme => "casual outing"), method: :get do %>
-          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+          <div class="home-card home-card-formal" id="weekend-chill">
             <div class="home-card-gradient">
               <p>WEEKEND CHILL</p>
             </div>
@@ -10,7 +10,7 @@
         <% end %>
       </div>
       <div class="col-md-4" style="text-align: center; padding: 0;">
-        <%= link_to outfits_url(:theme => "casual outing"), method: :get do %>
+        <%= link_to outfits_url(:theme => "Date Night"), method: :get do %>
           <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'date_night.png' %>');">
             <div class="home-card-gradient">
               <p>DATE NIGHT</p>
@@ -19,8 +19,8 @@
         <% end %>
       </div>
        <div class="col-md-4" style="text-align: center; padding: 0;">
-        <%= link_to outfits_url(:theme => "6"), method: :get do %>
-          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
+        <%= link_to outfits_url(:theme => "business casual"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'Formal_Test.jpg' %>');">
             <div class="home-card-gradient">
               <p>BUSINESS CASUAL</p>
             </div>
@@ -35,28 +35,28 @@
 <% else %>
   <div class="row">
       <div class="col-md-4" style="text-align: center; padding: 0;">
-        <%= link_to outfits_url(:theme => "1"), method: :get do %>
-          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'casual.jpeg' %>');">
+        <%= link_to outfits_url(:theme => "wedding"), method: :get do %>
+          <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'Formal_Test.jpg' %>');">
             <div class="home-card-gradient">
-              <p>CASUAL</p>
+              <p>WEDDING</p>
             </div>
           </div>
         <% end %>
       </div>
       <div class="col-md-4" style="text-align: center; padding: 0;">
-        <%= link_to outfits_url(:theme => "2"), method: :get do %>
+        <%= link_to outfits_url(:theme => "business formal"), method: :get do %>
           <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
             <div class="home-card-gradient">
-              <p>FORMAL</p>
+              <p>BUSINESS FORMAL</p>
             </div>
           </div>
         <% end %>
       </div>
        <div class="col-md-4" style="text-align: center; padding: 0;">
-        <%= link_to outfits_url(:theme => "3"), method: :get do %>
+        <%= link_to outfits_url(:theme => "formal date"), method: :get do %>
           <div class="home-card home-card-formal" style="background-image: url('<%= image_path 'formal.jpg' %>');">
             <div class="home-card-gradient">
-              <p>FORMAL</p>
+              <p>FORMAL DATE</p>
             </div>
           </div>
         <% end %>
