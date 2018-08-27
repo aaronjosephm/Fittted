@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
     @markers =
       {
         lat: current_user.latitude,
-        lng: current_user.longitude#,
+        lng: current_user.longitude
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     @orders = Order.where(user_id: current_user.id)

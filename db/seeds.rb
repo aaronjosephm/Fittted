@@ -10,19 +10,19 @@ Item.destroy_all if Rails.env.development?
 aaron = User.create(
   email: "aaron@gmail.com",
   password: "wagon_2018",
-  address: "5333 Casgrain AveMontreal, QC H2T 1X3"
+  address: "5333 Casgrain Ave, Montreal, QC H2T 1X3"
   )
 
 caroline = User.create(
   email: "caroline@gmail.com",
   password: "wagon_2018",
-  address: "5333 Casgrain AveMontreal, QC H2T 1X3"
+  address: "5333 Casgrain Ave, Montreal, QC H2T 1X3"
   )
 
 martin = User.create(
   email: "martine@gmail.com",
   password: "wagon_2018",
-  address: "5334 Casgrain AveMontreal, QC H2T 1X3"
+  address: "5334 Casgrain Ave, Montreal, QC H2T 1X3"
   )
 
 ####################################### Out fit 1 ##############################################
