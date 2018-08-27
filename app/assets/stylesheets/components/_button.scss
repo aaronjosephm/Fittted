@@ -1,3 +1,19 @@
+.btn-beige {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  background: $blue-brand;
+  border-radius: 4px;
+  transition: all 200ms ease;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+  }
+}
+
 .add-cart-button {
   color: white;
   text-align: center;

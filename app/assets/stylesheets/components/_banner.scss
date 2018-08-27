@@ -2,8 +2,13 @@
   height: 100vh;
   width: 100%;
   background-size: cover;
+  background-size: center;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 0;
 }
 
 .landing-banner-gradient {
@@ -12,27 +17,42 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.1));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #E0D9C6;
+  background-image: linear-gradient(45deg, rgba(80, 80, 80, 0.6), rgba(80, 80, 80, 0.2));
+  z-index: -1;
 }
 
-.landing-banner-gradient a {
-  text-decoration: none;
+.landing-banner-content  {
+  z-index: 1;
+  margin: 80px;
+  font-family: "Nunito";
+  h1 {
+    font-size: $title;
+    font-weight: 700;
+    color: white;
+  }
+
+  h2 {
+    font-size: $header2;
+    font-weight: 400;
+    color: $beige-brand;
+  }
 }
 
-.size-select-container {
-  margin-top: 1vh;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  height: 5vh;
-  margin-bottom: 10vh;
-  padding-bottom: 0;
-  // text-align: right;
+.landing-banner-content {
+  // color: #E0D9C6;
+
 }
+
+// .size-select-container {
+//   margin-top: 1vh;
+//   display: flex;
+//   justify-content: space-between;
+//   border: 1px solid black;
+//   height: 5vh;
+//   margin-bottom: 10vh;
+//   padding-bottom: 0;
+//   // text-align: right;
+// }
 
 .size-select-container select {
   border-radius: 0 !important;
