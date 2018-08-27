@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :address, presence: true
+
   def create_empty_cart
     order = Order.new(status: "pending")
     order.user = self

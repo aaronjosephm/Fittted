@@ -1,1 +1,13 @@
-<h1> orders index </h1>
+<h1 style="margin-top: 15vh; text-align: center;"> You currently have <%= @orders.size %> orders. </h1>
+<% @orders.each do |order| %>
+<div class="row" style="display: flex;">
+  <div class="col-md-6" style="text-align: center; padding-left: 25vw; margin-top: 5vh; padding-right: 0;">
+    <div class="order-card-img">
+    </div>
+  </div>
+  <div class="col-md-6" style="text-align: center; padding-right: 25vw; padding-left: 0; margin-top: 5vh;">
+      <div class="order-card">
+      </div>
+    </div>
+  </div>
+<% end %>
