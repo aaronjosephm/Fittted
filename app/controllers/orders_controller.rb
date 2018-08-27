@@ -59,6 +59,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
+    redirect_to order_all_path
   end
 
   private
