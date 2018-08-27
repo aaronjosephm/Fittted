@@ -1,8 +1,8 @@
-<% if request.env['PATH_INFO'] != "/" && request.env['PATH_INFO'] != "/home" && request.env['PATH_INFO'] != "/theme"%>
+<% if request.env['PATH_INFO'] != "/" %>
   <div class="navbar-wagon" style="background: #3A475B;">
     <!-- Logo -->
     <%= link_to home_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "logo-background.png", size: "117x45" %>
+      <%= image_tag "logo-background.png", size: "117x42" %>
     <% end %>
 
     <!-- Right Navigation -->
@@ -12,7 +12,7 @@
 
         <!-- Links when logged in -->
         <%= link_to order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" do %>
-          <i class="fas fa-shopping-bag" style="font-size: 25px;"></i>
+          <%= image_tag "shoppingbag.png", size: "62x30" %>
         <% end %>
 
         <%= link_to destroy_user_session_path, method: :delete do %>
@@ -41,7 +41,7 @@
   <div class="navbar-wagon">
       <!-- Logo -->
       <%= link_to home_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "logo-background.png", size: "117x45" %>
+        <%= image_tag "logo-background.png", size: "117x40" %>
       <% end %>
 
       <!-- Right Navigation -->
