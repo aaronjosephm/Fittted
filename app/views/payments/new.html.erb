@@ -1,6 +1,5 @@
-
 <div style="margin-top: 100px;">
-  <%= form_tag payments_path(@order) do %>
+  <%= form_tag payments_path(@order), class: "payment-button" do %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-name="My Teddy"

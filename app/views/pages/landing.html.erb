@@ -1,7 +1,10 @@
 <div class="landing-banner" style="background-image: url('<%= image_path 'landing.jpg' %>');">
   <div class="landing-banner-gradient">
-    <%= link_to home_url, method: :get do %>
-      <div class="landing-page-button">GET FITTED</div>
-    <%end %>
+  </div>
+  <div class="landing-banner-content">
+    <h1>Buy our stuff</h1>
+    <h2>Our stuff is awesome</h2>
+    <br>
+    <%= link_to "Get Fitted", home_path, class: "btn-beige" %>
   </div>
 </div>

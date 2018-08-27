@@ -20,8 +20,14 @@ class OrdersController < ApplicationController
   end
 
   def show
+
+
+
     @order = current_user.cart
     authorize @order
+
+    @order.amount_cents = Item.joins(order_outfit_items: { order_outfit: :order }).where(orders: { id: @order.id }).sum(:price_cents)
+    @order.save
     @order_outfits = policy_scope(OrderOutfit).where(order_id: @order.id)
     @outfits = policy_scope(Outfit).all
     @order_outfit_items = policy_scope(OrderOutfitItem).all
