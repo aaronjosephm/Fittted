@@ -26,22 +26,27 @@
           <% end %>
         <% end %>
         <p>$<%= Outfit.find(orderOutfit.outfit_id).price %>.00</p>
-        <div class="row" style="display: flex; justify-content: space-between;">
-          <div class="delete-button-container">
-            <%= link_to "Remove", delete_outfit_order_path(orderOutfit), method: :delete %>
-          </div>
+        <div class="delete-button-container">
+          <%= link_to "Remove", delete_outfit_order_path(orderOutfit), method: :delete %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
-<div class="row" style="display: flex; justify-content: space-between;">
-  <h1>Total Price: $<%= @total_price.to_s %>.00</h1>
+<div class="price-wrapper">
+  <p style="margin-top: 5vh; margin-bottom: 5vh;">Total Price: $<%= @total_price.to_s %>.00</p>
 </div>
-<div class="row" style="display: flex; justify-content: space-between;">
-  <div class="place-order-wrapper">
-    <%= link_to new_payments_path(@order) do %>
-      <div class="place-order-button">Place Order</div>
+<div class="place-order-wrapper">
+  <div style="margin-bottom: 100px;">
+    <%= form_tag payments_path(@order), class: "payment-button" do %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="My Teddy"
+        data-label="Place Order"
+        data-email="<%= current_user.email %>"
+        data-description="Teddy "
+        data-amount="<%= @order.amount_cents %>"
+        data-currency="<%= @order.amount.currency %>"></script>
     <% end %>
   </div>
 </div>

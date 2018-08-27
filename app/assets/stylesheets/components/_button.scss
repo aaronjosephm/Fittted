@@ -1,20 +1,17 @@
-.landing-page-button {
-  color: #E0D9C6;
-  font-size: 25px;
-  border: 2px solid #E0D9C6;
-  padding: 10px;
-  letter-spacing: 2px;
-  border-radius: 1px;
-}
-
-.landing-page-button a {
-  text-decoration: none !important;
-}
-
-.landing-page-button:hover {
-  opacity: 0.6;
-  transition: all 0.9s ease 0s;
+.btn-beige {
   text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  background: $blue-brand;
+  border-radius: 4px;
+  transition: all 200ms ease;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+  }
 }
 
 .add-cart-button {
@@ -35,6 +32,64 @@
   color: black;
   opacity: 0.5;
   transition: all 0.9s ease 0s;
+}
+
+.landing-page-button {
+  color: #E0D9C6;
+  font-size: 25px;
+  border: 2px solid #E0D9C6;
+  padding: 10px;
+  letter-spacing: 2px;
+  border-radius: 1px;
+}
+
+.landing-page-button a {
+  text-decoration: none !important;
+}
+
+.landing-page-button:hover {
+  opacity: 0.6;
+  transition: all 0.9s ease 0s;
+  text-decoration: none;
+}
+
+.payment-button {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0 !important;
+}
+
+.stripe-button-el {
+  background-image: linear-gradient(#C3AC96 80%,#C3AC96 80%) !important;
+  border-radius: 3px !important;
+  background-color: #C3AC96 !important;
+  opacity: 0.8 !important;
+}
+
+.stripe-button-el:after {
+}
+
+.stripe-button-el span {
+  font-weight: !important;
+  background-color: #C3AC96 !important;
+  text-shadow: 0 0px 0 rgba(0,0,0,0.25) !important;
+  opacity: 0.8 !important;
+  font-family: "Roboto" !important;
+  background-image: linear-gradient(#C3AC96 80%, #C3AC96 80%, #C3AC96 80%) !important;
+  font-size: 15px !important;
+  color: white !important;
+  height: 5vh !important;
+  width: 10vw !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.stripe-button-el:hover span {
+  color: black !important;
+  // opacity: 0.5 !important;
+  transition: all 0.9s ease 0s !important;
+  text-decoration: none !important;
 }
 
 .place-order-button {
@@ -111,6 +166,8 @@
 
 .delete-button-container {
   font-size: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .delete-order-outfit-button:hover {

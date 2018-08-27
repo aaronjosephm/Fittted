@@ -7,9 +7,15 @@
   text-align: center;
   color: white;
 }
+
 .alert-info {
-  background: $green;
+  background: $white;
 }
+
 .alert-warning {
   background: $red;
+}
+
+.alert-success {
+  color: white !important;
 }

@@ -60,7 +60,7 @@
 
 #weekend-chill:hover {
   background-image: asset-url("casual.jpeg");
-  background-position: 20% 20%;
+  // background-position: 20% 20%;
 }
 
 .home-card-gradient {
@@ -173,6 +173,11 @@ hr {
 }
 
 .outfit-index-card-wrapper > a {
+  text-decoration: none;
+  color: black;
+}
+
+.outfit-index-card-wrapper:hover > a {
   text-decoration: none;
   color: black;
 }
