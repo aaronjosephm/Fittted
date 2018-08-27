@@ -1,11 +1,25 @@
-// Define variables for your color scheme
+// Main colours
+$beige-brand: #E0D9C6;
+$blue-brand: #3A475B;
+
+// Secondary colours
+$mustard: #F9DC5C;
+$red: #ED254E;
+$green: #29524A;
+$blue: #5CC8FF;
+
+// Gray Scale
+$grey-darker: rgba(32, 44, 57, 1);
+$grey-dark: rgba(32, 44, 57, 0.7);
+$grey: rgba(32, 44, 57, 0.4);
+$grey-light: rgba(244, 217, 198, 0.3);
+$grey-lighter: rgba(244, 217, 198, 0.1);
+
 
 // For example:
-$red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;
 $orange: #E67E22;
-$green: #32B796;
 $gray: #000000;
 $light-gray: #F4F4F4;
 $white: #FFFFFF;
