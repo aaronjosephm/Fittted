@@ -16,9 +16,16 @@ class OrdersController < ApplicationController
   end
 
   def index
+    @markers =
+      {
+        lat: current_user.latitude,
+        lng: current_user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
     @orders = Order.where(user_id: current_user.id)
     authorize @orders
     policy_scope(Order).where(user_id: current_user.id)
+
   end
 
   def show

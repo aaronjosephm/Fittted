@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem "pundit"
+gem "geocoder"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.3'
