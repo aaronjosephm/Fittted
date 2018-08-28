@@ -43,16 +43,16 @@
 
 }
 
-// .size-select-container {
-//   margin-top: 1vh;
-//   display: flex;
-//   justify-content: space-between;
-//   border: 1px solid black;
-//   height: 5vh;
-//   margin-bottom: 10vh;
-//   padding-bottom: 0;
-//   // text-align: right;
-// }
+.size-select-container {
+  margin-top: 1vh;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 5vh;
+  margin-bottom: 10vh;
+  padding-bottom: 0;
+  // text-align: right;
+}
 
 .size-select-container select {
   border-radius: 0 !important;
