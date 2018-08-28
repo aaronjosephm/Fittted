@@ -14,7 +14,8 @@
     </div>
 
 
-    <div class="card-outfit-description">
+  <div class="card-outfit-description">
+    <%= form_tag(create_outfit_order_path(@outfit.id)) do %>
       <h1><%= @outfit.name %></h1>
       <p><%= @outfit.description %></p>
       <div><%= submit_tag 'Add to cart', class: "add-cart-button" %></div>
@@ -25,7 +26,6 @@
   <br>
   <br>
 
-  <%= form_tag(create_outfit_order_path(@outfit.id)) do %>
   <div class="row">
 
     <% OutfitItem.all.each do |outfit_item| %>
