@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # devise_scope :user do
+  #   root to: "devise/sessions#new"
+  #   post '/', to: "devise/sessions#create"
+  # end
+
   root to: 'pages#landing'
+
 
   get 'home', to: "pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -27,6 +34,7 @@ Rails.application.routes.draw do
   delete 'order_outfits/:id', to: "order_outfitss#destroy"
 
   get 'order/:order_id/payments/new', to: 'payments#new', as: 'new_payments'
+
   post 'order/:order_id/payments', to: 'payments#create', as: 'payments'
 
 end
