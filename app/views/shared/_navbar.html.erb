@@ -11,6 +11,8 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
+        <%= link_to "All orders", order_all_url, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
+
         <%= link_to order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" do %>
           <%= image_tag "shoppingbag.png", size: "62x30" %>
         <% end %>

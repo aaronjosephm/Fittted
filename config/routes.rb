@@ -16,9 +16,13 @@ Rails.application.routes.draw do
 
   get 'orders/:id', to: "orders#show", as: "order_show"
 
+  get 'orders', to: "orders#index", as: "order_all"
+
   patch 'orders/:id', to: "orders#update", as: "update_order"
 
   post 'orders', to: "order_outfits#create"
+
+  delete 'orders', to: "orders#destroy", as: "delete_order"
 
   delete 'order_outfits/:id', to: "order_outfitss#destroy"
 

@@ -43,3 +43,17 @@
    border-radius: 3px;
    // box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
+
+.order-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.status {
+  padding-left: 40px;
+  bottom: 0;
+  display: table-cell;
+  bottom: 0;
+  position: absolute;
+  // justify-content: space-between;
+}

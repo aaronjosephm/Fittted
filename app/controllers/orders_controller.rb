@@ -16,13 +16,19 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @markers =
+      {
+        lat: current_user.latitude,
+        lng: current_user.longitude
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    @orders = Order.where(user_id: current_user.id)
+    authorize @orders
+    policy_scope(Order).where(user_id: current_user.id)
+
   end
 
   def show
-
-
-
     @order = current_user.cart
     authorize @order
 
@@ -53,6 +59,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
+    redirect_to order_all_path
   end
 
   private
