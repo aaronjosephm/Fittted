@@ -78,10 +78,11 @@
 
 .home-card-gradient p {
   color: white;
-  font-size: 25px;
+  font-size: 27px;
   padding: 10px;
   letter-spacing: 3px;
   font-weight: 200;
+  opacity: 0.8;
 }
 
 .home-card-gradient:hover {
@@ -182,8 +183,8 @@ hr {
 }
 
 .outfit-index-card:hover {
-  transition: all 0.9s ease 0s;
-  opacity: 0.8;
+  transition: all 0.5s ease 0s;
+  opacity: 0.5;
 }
 
 .outfit-item-card:hover hr {
