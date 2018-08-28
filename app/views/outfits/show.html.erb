@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+
 <div class="row" style="display: flex; justify-content: space-between;">
   <% OutfitItem.all.each do |outfit_item|  %>
     <% if outfit_item.outfit_id == @outfit.id %>
@@ -39,6 +40,11 @@
       </div>
     <% end %>
   <% end %>
+  <div class="col-md-3" style="padding-right: 3vw; padding-left: 3vw;">
+    <div class="video-container">
+  <video id="video" autoplay muted loop src="../../../app/assets/videos/FittedVideo.mov"></video>
+</div>
+ </div>
 </div>
 <% end %>
 
