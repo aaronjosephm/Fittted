@@ -109,55 +109,67 @@ hr {
     color: black;
 }
 
-// Outfit cards
-.outfit-card-description {
-  height: 100vh;
-  background-color: white;
-  box-shadow: 2px 1px 1px 1px #FFFFFF;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  text-align: left !important;
-  padding-left: 5vw;
-  padding-right: 5vw;
+// Big cards
+.card-outfit {
+  margin-top: 50px;
+  display: flex;
+  box-shadow: $shadow;
+  border-radius: $radius;
+  height: 80vh;
 }
 
-.outfit-card-description h1 {
-  margin-top: 0 !important;
-  padding-top: 8vh;
-  font-size: 27px;
-  letter-spacing: 1px;
-}
-
-.outfit-card-description p {
-  margin-top: 0 !important;
-  font-size: 18px;
-  padding-top: 5vh;
-  letter-spacing: 1px;
-  line-height: 30px;
-}
-
-.outfit-card-image {
-  height: 100vh;
-  width: 100%;
+.card-outfit-image {
+  flex: 1 1 50%;
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.card-outfit-description {
+  flex: 1 1 50%;
+  background: white;
+  padding: 40px;
+}
+
+.card-outfit-description h1 {
+  margin-top: 0;
+  font-size: $title;
+  letter-spacing: 1px;
+}
+
+.card-outfit-description p {
+  margin-top: 20px;
+  font-size: $header3;
+  letter-spacing: 1px;
+  line-height: 30px;
+  color: $grey-dark;
 }
 
 
-// Card outfits
+
+
+// Small cards
 .card {
   width: 100%;
-  border-radius: 2px;
-  box-shadow: 1px 1px 2px rgba(32, 44, 57, 0.1);
+  margin-bottom: 10px;
+  border-radius: $radius;
+  box-shadow: shadow;
   &:hover {
-    box-shadow: 1px 1px 6px rgba(32, 44, 57, 0.15);
+    box-shadow: shadow-hover;
   }
 }
 
 .card-image {
   width: 100%;
   height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-image-show {
+  width: 100%;
+  height: 300px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -175,12 +187,31 @@ hr {
   opacity: 0;
   transition: all 300ms ease;
   &:hover {
-    background-image: linear-gradient(rgba(80, 80, 80, 0.9), rgba(80, 80, 80, 0.4));
+    background-image: linear-gradient(rgba(80, 80, 80, 0.9), rgba(80, 80, 80, 0.9));
     opacity: 0.98;
   }
 }
 
 .card-content {
+  padding: 15px 20px;
+  h3 {
+    font-size: $header2;
+    color: $grey-darker;
+    text-decoration: none;
+    &:hover {
+    }
+  }
+  p {
+    font-size: $text-small;
+    color: $grey-dark;
+    text-decoration: none;
+    margin-bottom: 0;
+    &:hover {
+    }
+  }
+}
+
+.card-content-show {
   padding: 15px 20px;
   h3 {
     font-size: $header2;
@@ -234,7 +265,7 @@ hr {
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: $shadow;
   margin-bottom: 2vh;
 }
 
@@ -250,7 +281,7 @@ hr {
   background-position: 50% 70%;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: $shadow;
   margin-bottom: 2vh;
   padding: 5px;
 }
@@ -275,7 +306,7 @@ hr {
 .order-card {
   text-align: left;
   padding-left: 3vw;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: $shadow;
   height: 45vh;
   background-color: white;
 }
@@ -283,7 +314,7 @@ hr {
 .orders-card {
   text-align: left;
   padding-left: 3vw;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: $shadow;
   height: 45vh;
   background-color: white;
   padding-bottom: 2vh;

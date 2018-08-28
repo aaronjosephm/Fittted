@@ -1,3 +1,5 @@
+<div class="navbar-placeholder"></div>
+
 <% if flash[:order_added]  %>
   <div class="alert alert-success alert-dismissible" role="alert" style="background-color: #C3AC96 ; opacity: 0.8; margin-top: 10vh;">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -5,52 +7,55 @@
   </div>
 <% end %>
 
-<%= form_tag(create_outfit_order_path(@outfit.id)) do -%>
-<div class="row" style="margin-bottom: 5vh;">
-  <div class="col-md-6" style="text-align: center; padding-left: 3vw; padding-top: 5vw; margin-top: 5vh;">
-      <div class="outfit-card-image" style="background-image: url('<%= image_path @outfit.photo %>');">
-      </div>
-  </div>
-  <div class="col-md-6" style="text-align: center; padding-right: 3vw; padding-top: 5vw; padding-left: 0; margin-top: 5vh;">
-      <div class="outfit-card-description">
-        <h1><%= @outfit.name %></h1>
-        <p>$ <%= @outfit.price %>.00</p>
-        <p><%= @outfit.description %></p>
-        <div><%= submit_tag 'Add to cart', class: "add-cart-button" %></div>
-      </div>
+<div class="container">
+
+  <div class="card-outfit">
+    <div class="card-outfit-image" style="background-image: url('<%= image_path @outfit.photo %>');">
+    </div>
+
+
+    <div class="card-outfit-description">
+      <h1><%= @outfit.name %></h1>
+      <p><%= @outfit.description %></p>
+      <div><%= submit_tag 'Add to cart', class: "add-cart-button" %></div>
     </div>
   </div>
-  <% end %>
 
+  <br>
+  <br>
+  <br>
 
-<div class="container">
+  <%= form_tag(create_outfit_order_path(@outfit.id)) do %>
   <div class="row">
 
     <% OutfitItem.all.each do |outfit_item| %>
 
       <% if outfit_item.outfit_id == @outfit.id %>
         <div class="col-xs-12 col-sm-6 col-md-3">
+
           <div class="card">
-            <div class="card-image" style="background-image: url(<%= outfit_item.item.photo %>);">
+            <div class="card-image-show" style="background-image: url(<%= outfit_item.item.photo %>);">
               <div class="card-image-gradient">
                 <p><%= outfit_item.item.description %></p>
               </div>
             </div>
-            <div class="card-content">
+
+            <div class="card-content-show">
               <h3><%= outfit_item.item.name %></h3>
               <p>$<%= outfit_item.item.price %>.00</p>
+              <!-- <p><strong>Size:</strong></p> -->
+             <div class="size-select-container">
+               <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.sizes), class: "size-select" %>
+             </div>
             </div>
           </div>
-          <p></p>
+
         </div>
       <% end %>
-
     <% end %>
-
   </div>
-</div>
-
-
+  </div>
+<% end %>
 
 
 
