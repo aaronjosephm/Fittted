@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <% end %>
+
 
 
 <div class="container">
@@ -39,6 +39,10 @@
             <div class="card-content">
               <h3><%= outfit_item.item.name %></h3>
               <p>$<%= outfit_item.item.price %>.00</p>
+              <p><strong>Size:</strong></p>
+               <div class="size-select-container">
+                 <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.sizes), class: "size-select" %>
+               </div>
             </div>
           </div>
           <p></p>
@@ -46,9 +50,9 @@
       <% end %>
 
     <% end %>
-
   </div>
 </div>
+<% end %>
 
 
 
