@@ -1,18 +1,18 @@
 <h1 style="margin-top: 15vh; text-align: center;"> You currently have <%= @orders.size %> orders. </h1>
 <% @orders.each do |order| %>
 <div class="row" style="display: flex;">
-  <div class="col-md-6" style="text-align: center; padding-left: 25vw; margin-top: 5vh; padding-right: 0;">
-    <div class="order-card-img">
+  <div class="col-md-6" style="text-align: center; padding-left: 16vw; margin-top: 5vh; padding-right: 0;">
+    <div class="order-card-img" style="height: 60vh; width: 35vw;">
       <div
         class="map"
         style="width: 100%;
-        height: 45vh;"
+        height: 60vh;"
         data-markers="<%= @markers.to_json %>"
       ></div>
     </div>
   </div>
   <div class="col-md-6" style="text-align: center; padding-right: 25vw; padding-left: 0; margin-top: 5vh;">
-      <div class="orders-card" style="padding-left: 0;">
+      <div class="orders-card" style="padding-left: 0; height: 60vh !important; width: 35vw !important;">
         <p style="text-align: center;"><strong>Items on this order:</strong></p>
         <% total_price = 0 %>
         <% OrderOutfit.where(order_id: order.id).each do |orderOutfit| %>
@@ -32,8 +32,37 @@
 
             <p>Total paid: $<%= total_price.to_s %>.00</p>
 
-            <p>Expected arrival: 2 days</p>
+            <p style="display: inline-table;">Expected arrival: <div id="demo"></div></p>
 
+            <%= javascript_tag do %>
+              var countDownDate = <%= order.arrival.to_f %>;
+
+              // Update the count down every 1 second
+              var x = setInterval(function() {
+
+                  // Get todays date and time
+                  var now = new Date().getTime();
+
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                  // Output the result in an element with id="demo"
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+
+                  // If the count down is over, write some text
+                  if (distance < 0) {
+                      clearInterval(x);
+                      document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+              }, 1000);
+            <% end %>
             <div class="delete-button-container", style="padding-bottom: 2vh;">
               <%= link_to "Remove", delete_order_url(id: order.id), method: :delete %>
             </div>
@@ -43,6 +72,8 @@
     </div>
   </div>
 <% end %>
+
+
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
 <%= javascript_pack_tag 'application' %>
