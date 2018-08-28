@@ -23,7 +23,7 @@ class PaymentsController < ApplicationController
       currency:     @order.amount.currency
     )
 
-    @order.update(status: 'paid')
+    @order.update(status: 'paid', arrival: (Time.now.to_f*1000 + 172800000).to_s)
     redirect_to order_show_path(@order)
 
   rescue Stripe::CardError => e
