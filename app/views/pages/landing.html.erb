@@ -1,14 +1,66 @@
-<div class="landing-banner" style="background-image: url('<%= image_path 'landing4.jpg' %>');">
-  <div class="landing-banner-gradient">
+<% if user_signed_in? %>
+  <div class="landing-banner" style="background-image: url('<%= image_path 'landing4.jpg' %>');">
+    <div class="landing-banner-gradient">
+    </div>
+    <div class="landing-banner-content">
+      <h1>Buy our stuff</h1>
+      <h2>Our stuff is awesome</h2>
+      <br>
+      <br>
+      <br>
+      <button type="button" class="btn-beige" data-toggle="modal" data-target="#Preferences">
+            Get Fitted
+      </button>
+      <!-- <%= link_to "Get Fitted", home_path, class: "btn-beige" %> -->
+    </div>
   </div>
-  <div class="landing-banner-content">
-    <h1>Buy our stuff</h1>
-    <h2>Our stuff is awesome</h2>
-    <br>
-    <br>
-    <br>
-    <%= link_to "Get Fitted", home_path, class: "button button-blue" %>
+
+
+  <div class="modal fade" id="Preferences" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="text-align: center; display: flex !important; justify-content: center; width: 70vw !important;">
+      <div class="modal-content" style="border-radius: 0em !important; flex-direction: row; width: 70vw !important;">
+        <div class="modal-img">
+        </div>
+          <div class="form" style="width: 100%;">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Preferences</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+
+            <div class="modal-body">
+
+              <%= form_tag set_preferences_path(current_user.id), method: "patch" do %>
+                <div class="form-inputs">
+                  <%= text_field_tag :color_preference %>
+                </div>
+                <div class="form-inputs">
+                  <%= text_field_tag :body_type %>
+                </div>
+                <div class="form-actions">
+                  <%= submit_tag "continue", class: "btn btn-primary" %>
+                </div>
+              <% end %>
+
+              <div class="modal-footer">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="landing-banner" style="background-image: url('<%= image_path 'landing-banner.jpg' %>');">
+    <div class="landing-banner-gradient">
+    </div>
+    <div class="landing-banner-content">
+      <h1>Buy our stuff</h1>
+      <h2>Our stuff is awesome</h2>
+      <br>
+      <%= link_to "Get Fitted", home_path, class: "btn-beige" %>
+    </div>
+  </div>
+<% end %>
 
 
