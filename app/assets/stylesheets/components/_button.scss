@@ -1,18 +1,43 @@
-.btn-beige {
+.button {
   text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 10px 15px;
-  background: $blue-brand;
-  border-radius: 4px;
+  font-size: $header3;
+  font-family: "Roboto";
+  font-weight: 400;
+  line-spacing: 1px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  box-shadow: $shadow;
   transition: all 200ms ease;
   &:hover {
     text-decoration: none;
     color: white;
-    opacity: 0.9;
+    opacity: 0.95;
+    box-shadow: $shadow-hover;
   }
 }
+
+.button-beige {
+  color: white;
+  background: $beige-brand;
+}
+
+.button-blue {
+  background: $blue-brand;
+  color: $white;
+}
+
+.button-blue-transparent {
+  border: 2px solid $blue-brand;
+  color: $blue-brand;
+  &:hover {
+    color: $blue-brand;
+  }
+}
+
+
+
+
+
 
 .add-cart-button {
   text-decoration: none;
@@ -23,7 +48,6 @@
   background: #C3AC96;
   border-radius: 4px;
   transition: all 200ms ease;
-  margin-top: 250px;
   &:hover {
     text-decoration: none;
     color: white;
