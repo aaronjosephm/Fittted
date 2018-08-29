@@ -5,11 +5,17 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 
 
-const color = document.querySelectorAll("div.color-button")
+const colors = document.querySelectorAll("div.color-button")
 
-color.forEach(function(color) {
+colors.forEach(function(color) {
   color.addEventListener("click", (event) => {
     document.getElementById("color_preference").value = event.target.classList[3];
+
+    colors.forEach(function(color) {
+      color.classList.remove("highlight");
+
+    });
+    event.target.classList.add("highlight");
   });
 });
 
@@ -19,15 +25,14 @@ document.getElementById("continue").addEventListener("click", (event) => {
   document.getElementById("body-type-form").classList.remove("hide")
 });
 
+const bodies = document.querySelectorAll("div.body-type-select")
 
-document.getElementById("large").addEventListener("click", (event) => {
-  document.getElementById("body_type").value = "large";
-});
-
-  document.getElementById("regular").addEventListener("click", (event) => {
-    document.getElementById("body_type").value = "regular";
-});
-
-  document.getElementById("slim").addEventListener("click", (event) => {
-    document.getElementById("body_type").value = "slim";
+bodies.forEach(function(body) {
+  body.addEventListener("click", (event) => {
+    document.getElementById("body_type").value = event.target.classList[1];
+    bodies.forEach(function(body) {
+      body.classList.remove("highlight-body");
+    });
+    event.target.classList.add("highlight-body");
+  });
 });
