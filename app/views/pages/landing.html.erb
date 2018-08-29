@@ -33,6 +33,8 @@
               <%= form_tag set_preferences_path(current_user.id), method: "patch" do %>
                 <div class="form-inputs">
                   <%= text_field_tag :color_preference %>
+                  <%= submit_tag "", class: "btn btn-primary", style: "width" %>
+                  <%= submit_tag "", class: "btn btn-default" %>
                 </div>
                 <div class="form-inputs">
                   <%= text_field_tag :body_type %>
