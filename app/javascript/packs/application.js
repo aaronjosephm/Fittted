@@ -5,3 +5,10 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 
 
+const color = document.querySelectorAll("div.color-button")
+
+color.forEach(function(color) {
+  color.addEventListener("click", (event) => {
+    document.getElementById("color_preference").value = event.target.classList[3];
+  });
+});
