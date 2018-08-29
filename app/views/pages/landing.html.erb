@@ -16,7 +16,7 @@
   </div>
 
 
-
+<%= form_tag set_preferences_path(current_user.id), method: "patch" do %>
   <div class="modal fade" id="Preferences" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document" style="text-align: center; display: flex !important; justify-content: center; width: 70vw !important;">
       <div class="modal-content" style="border-radius: 0em !important; flex-direction: row; width: 70vw !important;">
@@ -31,9 +31,7 @@
             </div>
 
             <div class="modal-body">
-
-              <%= form_tag set_preferences_path(current_user.id), method: "patch" do %>
-                <div class="form-inputs">
+                <div class="form-inputs" id="color-form">
 
                   <h3>Choose your color preferences:</h3>
                   <br>
@@ -44,25 +42,34 @@
                     <% end %>
                   <% end %>
                   <br>
-                  <%= submit_tag "", class: "btn btn-default" %>
-                </div>
                 <div class="form-inputs">
                   <%= text_field_tag :color_preference %>
                   <br>
-                  <%= text_field_tag :body_type %>
+                  <br>
+
                 </div>
                 <div class="form-actions">
-                  <%= submit_tag "continue", class: "btn btn-primary" %>
+                  <div class="btn btn-primary" style="border-radius: 0px !important;" id="continue">Continue</div>
                 </div>
-              <% end %>
+                <br>
+                <br>
 
               <div class="modal-footer">
+              </div>
+
+              </div>
+              <div class="body-type-form hide" id="body-type-form">
+                <div class="form-actions">
+                  <%= text_field_tag :body_type %>
+                  <%= submit_tag "continue", class: "btn btn-primary" %>
+                </div>
               </div>
             </div>
         </div>
       </div>
     </div>
   </div>
+<% end %>
 
 <% else %>
   <div class="landing-banner" style="background-image: url('<%= image_path 'landing4.jpg' %>');">

@@ -12,3 +12,9 @@ color.forEach(function(color) {
     document.getElementById("color_preference").value = event.target.classList[3];
   });
 });
+
+
+document.getElementById("continue").addEventListener("click", (event) => {
+  document.getElementById("color-form").classList.add("hide")
+  document.getElementById("body-type-form").classList.remove("hide")
+});
