@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def set_preferences?
+    return true
+  end
 end

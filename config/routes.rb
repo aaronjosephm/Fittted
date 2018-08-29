@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :outfits, only: [ :index, :show ] do
   end
 
+  patch 'users/:id', to: "users#set_preferences", as: "set_preferences"
+
   post 'outfits/:outfit_id/order', to: "order_outfits#create", as: "create_outfit_order"
 
   delete 'orders/:id', to: "order_outfits#destroy", as: "delete_outfit_order"
