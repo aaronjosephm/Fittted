@@ -15,21 +15,22 @@
 }
 
 .add-cart-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-decoration: none;
   color: white;
-  text-align: center;
   font-size: 18px;
-  background-color: #C3AC96;
-  border-radius: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 130px;
-  width: 12vw;
-  height: 6.5vh;
-  opacity: 0.8;
+  font-weight: 500;
+  padding: 10px 15px;
+  background: #C3AC96;
+  border-radius: 4px;
+  transition: all 200ms ease;
+  margin-top: 250px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+  }
 }
+
 
 .add-cart-button:hover {
   color: black;
