@@ -5,7 +5,7 @@
     <h1>Buy our stuff</h1>
     <h2>Our stuff is awesome</h2>
     <br>
-    <button type="button" class="btn-beige" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn-beige" data-toggle="modal" data-target="#Preferences">
           Get Fitted
     </button>
     <!-- <%= link_to "Get Fitted", home_path, class: "btn-beige" %> -->
@@ -13,44 +13,14 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Preferences" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" style="text-align: center; display: flex !important; justify-content: center; width: 70vw !important;">
     <div class="modal-content" style="border-radius: 0em !important; flex-direction: row; width: 70vw !important;">
       <div class="modal-img">
       </div>
         <div class="form" style="width: 100%;">
-        <div class="sign-in-form">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email,
-                          required: false,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" } %>
-              <%= f.input :password,
-                          required: false,
-                          input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            </div>
-            <div class="form-actions">
-              <%= f.button :submit, "Log in", class: "btn btn-primary" %>
-            </div>
-            <% end %>
-          <div class="sign-up-btn" onClick="toggleForm()">Sign Up</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-          </div>
-          </div>
-          <div class="sign-up-form hide">
-          <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Preferences</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -61,32 +31,22 @@
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.input :email,
-                            required: true,
+                <%= f.input :color_preference,
+                            required: false,
                             autofocus: true ,
-                            input_html: { autocomplete: "email" }%>
-                <%= f.input :password,
-                            required: true,
-                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                            input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
-                            required: true,
-                            input_html: { autocomplete: "new-password" } %>
-                <%= f.input :address,
-                            required: true,
-                            input_html: { autocomplete: "address" } %>
+                            input_html: { autocomplete: "color preference" }%>
+                <%= f.input :body_type,
+                            required: false,
+                            input_html: { autocomplete: "body type" } %>
               </div>
 
               <div class="form-actions">
-                <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+                <%= f.button :submit, "Continue", class: "btn btn-primary" %>
               </div>
             <% end %>
-            <div class="sign-in-btn"  onClick="toggleForm()">Sign In</div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
