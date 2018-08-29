@@ -16,7 +16,7 @@
 }
 
 #casual {
-  background-image: asset-url("casual.jpeg");
+  background-image: asset-url("Casual-main.jpeg");
 }
 
 #formal {
@@ -55,7 +55,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.1));
+  background-image: linear-gradient(rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 0.1));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,11 +64,12 @@
 
 .home-card-gradient p {
   color: white;
-  font-size: 27px;
+  font-size: 30px;
   padding: 10px;
-  letter-spacing: 3px;
-  font-weight: 200;
+  letter-spacing: 2px;
+  font-weight: 300;
   opacity: 0.8;
+  font-family: Roboto;
 }
 
 .home-card-gradient:hover {
@@ -129,6 +130,9 @@ hr {
   flex: 1 1 50%;
   background: white;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-outfit-description h1 {

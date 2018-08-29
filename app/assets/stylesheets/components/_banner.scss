@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   z-index: 0;
   margin-bottom: 10px;
 }
@@ -25,16 +25,17 @@
 .landing-banner-content  {
   z-index: 1;
   margin: 80px;
-  font-family: "Nunito";
   h1 {
+    font-family: "Roboto";
     font-size: $title;
     font-weight: 700;
     color: white;
   }
 
   h2 {
+    font-family: "Nunito";
     font-size: $header2;
-    font-weight: 400;
+    font-weight: 300;
     color: $beige-brand;
   }
 }
