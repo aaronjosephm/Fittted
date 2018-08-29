@@ -59,6 +59,30 @@
 
               </div>
               <div class="body-type-form hide" id="body-type-form">
+                <h4> Which body type best describes you?</h4>
+                <div class="body-type-select-container">
+                  <div>
+                    <div class="body-type-select" id="large" style="background-image: url('<%= image_path 'large.jpg' %>');">
+                    </div>
+                    <div class="body-type-select-label">
+                      Large
+                    </div>
+                  </div>
+                  <div style="margin-top: 0vh;">
+                    <div class="body-type-select" id="regular" style="background-image: url('<%= image_path 'regular.jpg' %>');">
+                    </div>
+                    <div class="body-type-select-label">
+                      Regular
+                    </div>
+                  </div>
+                  <div>
+                    <div class="body-type-select" id="slim" style="background-image: url('<%= image_path 'slim.jpg' %>');">
+                    </div>
+                    <div class="body-type-select-label">
+                      Slim
+                    </div>
+                  </div>
+                </div>
                 <div class="form-actions">
                   <%= text_field_tag :body_type %>
                   <%= submit_tag "continue", class: "btn btn-primary" %>
