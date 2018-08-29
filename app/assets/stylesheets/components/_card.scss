@@ -20,7 +20,7 @@
 }
 
 #formal {
-  background-image: asset-url('Formal_Test.jpg');
+  background-image: asset-url('FormalMain2.jpg');
 }
 
 #casual:hover {
@@ -147,6 +147,18 @@ hr {
   letter-spacing: 1px;
   line-height: 30px;
   color: $grey-dark;
+}
+
+.card-outfit-description h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.fas.fa-check {
+  font-size: 15px;
+
 }
 
 
