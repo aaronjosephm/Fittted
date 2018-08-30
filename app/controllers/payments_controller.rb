@@ -24,7 +24,7 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(status: 'paid', arrival: (Time.now.to_f*1000 + 172800000).to_s)
-    redirect_to order_show_path(@order)
+    redirect_to order_all_path
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
