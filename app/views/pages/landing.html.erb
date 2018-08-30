@@ -1,3 +1,5 @@
+<%= render 'shared/modal' %>
+
 <% if user_signed_in? %>
   <div class="landing-banner" style="background-image: linear-gradient(rgba(100, 100, 100, 0.2), rgba(100, 100, 100, 0.05)), url('<%= image_path 'Landing7.jpg' %>');">
     <div class="landing-banner-gradient">
@@ -19,21 +21,21 @@
 <%= form_tag set_preferences_path(current_user.id), method: "patch" do %>
   <div class="modal fade" id="Preferences" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document" style="text-align: center; display: flex !important; justify-content: center; width: 70vw !important;">
-      <div class="modal-content" style="border-radius: 0em !important; flex-direction: row; width: 70vw !important;">
-        <div class="modal-img">
+      <div class="modal-content" style="border-radius: 0em !important; display: flex; flex-direction: row; width: 50vw !important; height: 60vh; margin-top: 15vh;">
+        <div class="modal-img" style="flex: 1 1 50%;">
         </div>
-          <div class="form" style="width: 100%;">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Preferences</h5>
+          <div class="form" style="width: 100%; flex: 1 1 50%;">
+<!--             <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Color Preferences</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            </div>
+            </div> -->
 
             <div class="modal-body">
                 <div class="form-inputs" id="color-form">
 
-                  <h3>Choose your color preference:</h3>
+                  <h4>Choose your color preference</h4>
                   <br>
                   <% @colors.each.with_index  do |color, index| %>
                     <div class="color-button btn btn-primary <%= color %>" style="border-color: <%= color %> !important; background-color: <%= color %> !important; margin: 2vh !important; width: 3vh !important; height: 3vh !important; border-radius: 0px !important;" value=<%= color %>></div>
@@ -49,17 +51,16 @@
 
                 </div>
                 <div class="form-actions">
-                  <div class="btn btn-primary" style="border-radius: 0px !important;" id="continue">Continue</div>
+                  <div class="button button-blue" style="border-radius: 0px !important; width: 50%; margin: 0 auto; " id="continue">Continue</div>
                 </div>
                 <br>
                 <br>
 
-              <div class="modal-footer">
-              </div>
-
               </div>
               <div class="body-type-form hide" id="body-type-form">
                 <h4> Which body type best describes you?</h4>
+                <br>
+                <br>
                 <div class="body-type-select-container">
                   <div>
                     <div class="body-type-select large" id="large" style="background-image: url('<%= image_path 'large.jpg' %>');">
@@ -68,7 +69,7 @@
                       Large
                     </div>
                   </div>
-                  <div style="margin-top: 0vh;">
+                  <div>
                     <div class="body-type-select regular" id="regular" style="background-image: url('<%= image_path 'regular.jpg' %>');">
                     </div>
                     <div class="body-type-select-label">
@@ -85,7 +86,7 @@
                 </div>
                 <div class="form-actions">
                   <%= hidden_field_tag :body_type %>
-                  <%= submit_tag "continue", class: "btn btn-primary" %>
+                  <%= submit_tag "continue", class: "button button-blue" %>
                 </div>
               </div>
             </div>
