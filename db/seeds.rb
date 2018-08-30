@@ -276,3 +276,4 @@ black_shirt_outfit = OutfitItem.new(
 
 black_shirt_outfit.save!
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

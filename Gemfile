@@ -24,6 +24,9 @@ gem 'stripe'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'money-rails'
 
+gem 'activeadmin'
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
