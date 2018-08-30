@@ -18,7 +18,7 @@
         <% end %>
 
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <%= t(".sign_out", default: "Log out")  %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
         <% end %>
 
       <% else %>
@@ -53,7 +53,7 @@
 
           <!-- Links when logged in -->
           <%= link_to order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" do %>
-            <i class="fas fa-shopping-bag" style="font-size: 25px;"></i>
+            <%= image_tag "shoppingbag.png", size: "62x30" %>
           <% end %>
 
           <%= link_to destroy_user_session_path, method: :delete do %>
