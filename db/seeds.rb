@@ -162,7 +162,7 @@ urban_classic = Outfit.new(
   price: 345,
   theme: "weekend chill",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "casual.jpeg",
+  photo: "casual.jpg",
   body_type: "large",
   color: "red"
   )
