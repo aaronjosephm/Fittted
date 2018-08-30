@@ -77,7 +77,7 @@ double_denim = Outfit.new(
   price: 345,
   theme: "weekend chill",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "date_night.png",
+  photo: "alexcosta.jpg",
   body_type: "slim",
   color: "blue"
   )
@@ -149,7 +149,7 @@ jumper_sweater = Item.new(
 jumper_sweater.save!
 
 brown_boots = Item.new(
-  name: "Brown hiking boots",
+  name: "Brown boots",
   price: 100,
   description: "With a technical look from the revolutionary '90s Equipment series, these shoes mix modern materials with retro runner style. They feature a sock-like knit upper and supportive TPU wings that wrap the heel. Detailed with textile 3-Stripes that merge with the moulded 3-Stripes on the midsole.",
   photo: "https://www.julesb.co.uk/images/products/1504688424-52154400.jpg"
@@ -241,7 +241,7 @@ midnight_classic = Outfit.new(
   price: 300,
   theme: "weekend chill",
   description: "Bella + Canvas 3001 Unisex Jersey Short Sleeve Crew Neck: This Bella 3001 unisex essential fits like a well-loved favorite, featuring a crew neck, short sleeves and designed with superior combed and ring-spun cotton that acts as the best blank canvas for printing. Offered in a variety of solid and heather colors. Made from US raw materials and printed in the US.",
-  photo: "weekend_chill.jpg",
+  photo: "Casual-main.jpg",
   body_type: "large",
   color: "red"
   )
@@ -276,3 +276,4 @@ black_shirt_outfit = OutfitItem.new(
 
 black_shirt_outfit.save!
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
