@@ -77,7 +77,7 @@ double_denim = Outfit.new(
   price: 345,
   theme: "weekend chill",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "date_night.png",
+  photo: "alexcosta.jpg",
   body_type: "slim",
   color: "blue"
   )
@@ -241,7 +241,7 @@ midnight_classic = Outfit.new(
   price: 300,
   theme: "weekend chill",
   description: "Bella + Canvas 3001 Unisex Jersey Short Sleeve Crew Neck: This Bella 3001 unisex essential fits like a well-loved favorite, featuring a crew neck, short sleeves and designed with superior combed and ring-spun cotton that acts as the best blank canvas for printing. Offered in a variety of solid and heather colors. Made from US raw materials and printed in the US.",
-  photo: "weekend_chill.jpg",
+  photo: "Casual-main.jpg",
   body_type: "large",
   color: "red"
   )
