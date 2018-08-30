@@ -152,7 +152,7 @@ brown_boots = Item.new(
   name: "Brown hiking boots",
   price: 100,
   description: "With a technical look from the revolutionary '90s Equipment series, these shoes mix modern materials with retro runner style. They feature a sock-like knit upper and supportive TPU wings that wrap the heel. Detailed with textile 3-Stripes that merge with the moulded 3-Stripes on the midsole.",
-  photo: "https://d2fzf9bbqh0om5.cloudfront.net/images/481727/main/rebelsmarket_men_brown_combat_boot_men_lace_up_military_boots_handmade_leather_boot_boots_4.jpg"
+  photo: "https://www.julesb.co.uk/images/products/1504688424-52154400.jpg"
   )
 
 brown_boots.save!
