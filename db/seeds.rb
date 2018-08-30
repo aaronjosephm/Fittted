@@ -75,9 +75,9 @@ stone_island_beanie.save!
 double_denim = Outfit.new(
   name: "double denim",
   price: 345,
-  theme: "casual outing",
+  theme: "weekend chill",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "https://i.pinimg.com/originals/4b/a4/14/4ba41439ca87212bb6f19b76b42b3b99.jpg",
+  photo: "date_night.png",
   body_type: "slim",
   color: "blue"
   )
@@ -152,7 +152,7 @@ brown_boots = Item.new(
   name: "Brown hiking boots",
   price: 100,
   description: "With a technical look from the revolutionary '90s Equipment series, these shoes mix modern materials with retro runner style. They feature a sock-like knit upper and supportive TPU wings that wrap the heel. Detailed with textile 3-Stripes that merge with the moulded 3-Stripes on the midsole.",
-  photo: "https://d2fzf9bbqh0om5.cloudfront.net/images/481727/main/rebelsmarket_men_brown_combat_boot_men_lace_up_military_boots_handmade_leather_boot_boots_4.jpg"
+  photo: "https://www.julesb.co.uk/images/products/1504688424-52154400.jpg"
   )
 
 brown_boots.save!
@@ -160,9 +160,9 @@ brown_boots.save!
 urban_classic = Outfit.new(
   name: "urban classic",
   price: 345,
-  theme: "casual outing",
+  theme: "weekend chill",
   description: "Cool outfit for going out in relatively cold weather. Each clothing item for this outfit was made for comfort, and style. Wear it in the snow, rain, or just on a cloudy day. Feel warm with this one.",
-  photo: "https://slack-imgs.com/?c=1&url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Fvp%2F4d6bf24622b26340746544cf20db2f9d%2F5C0465E7%2Ft51.2885-15%2Fe35%2F29739482_166674707483196_7473541788540600320_n.jpg",
+  photo: "casual.jpeg",
   body_type: "large",
   color: "red"
   )
@@ -198,5 +198,81 @@ sweater = OutfitItem.new(
 sweater.save!
 
 
+#### Outfit 3 #####
 
+brown_jacket = Item.new(
+  name: "brown leather jacket",
+  price: 50,
+  description: "A versatile jacket to take you from day to night. Pair with jeans and sneakers. Material: 100% PU, Polyester Lining.",
+  photo: "https://connor.imgix.net/Connor/Products/C15CJ113_BRN_1.png?w=480&h=680&bg=f1f1f1&cs=tinysrgb&fm=jpg&rect=440,0,2120,3000"
+  )
+
+brown_jacket.save!
+
+ripped_jeans = Item.new(
+  name: "ripped jeans",
+  price: 100,
+  description: "Salt & Pepper's 'Kate' skinny jeans are ripped, faded and whiskered to perfection for an authentic worn-in effect. This high-rise pair is made from soft stretch-denim with a skinny fit all the way down to your ankle. We think they look especially cool with ankle boots or lace flats.",
+  photo: "https://www.fashionnoiz.com/userfiles/galleries/kate-ripped-blue-jeans-11500.jpg"
+  )
+
+ripped_jeans.save!
+
+suade_boots = Item.new(
+  name: "suade boots",
+  price: 100,
+  description: "SIZING -- Athletic shoes tend to run 1/2 to 1 size larger than our boots. Order the same size that you wear in other leather boots or leather dress shoes. If you are between sizes, we recommend ordering the smaller size.",
+  photo: "https://images-na.ssl-images-amazon.com/images/I/81s778M37WL._UX395_.jpg"
+  )
+
+suade_boots.save!
+
+black_shirt = Item.new(
+  name: "black shirt",
+  price: 20,
+  description: "Bella + Canvas 3001 Unisex Jersey Short Sleeve Crew Neck: This Bella 3001 unisex essential fits like a well-loved favorite, featuring a crew neck, short sleeves and designed with superior combed and ring-spun cotton that acts as the best blank canvas for printing. Offered in a variety of solid and heather colors. Made from US raw materials and printed in the US.",
+  photo: "https://appassets.azureedge.net/product-tshirts/Background/Front/AA2001_Black_Front_BackgroundV1.png"
+  )
+
+black_shirt.save!
+
+midnight_classic = Outfit.new(
+  name: "midnight classic",
+  price: 300,
+  theme: "weekend chill",
+  description: "Bella + Canvas 3001 Unisex Jersey Short Sleeve Crew Neck: This Bella 3001 unisex essential fits like a well-loved favorite, featuring a crew neck, short sleeves and designed with superior combed and ring-spun cotton that acts as the best blank canvas for printing. Offered in a variety of solid and heather colors. Made from US raw materials and printed in the US.",
+  photo: "weekend_chill.jpg",
+  body_type: "large",
+  color: "red"
+  )
+
+midnight_classic.save!
+
+brown_jacket_outfit = OutfitItem.new(
+  item: brown_jacket,
+  outfit: midnight_classic
+  )
+
+brown_jacket_outfit.save!
+
+ripped_jeans_outfit = OutfitItem.new(
+  item: ripped_jeans,
+  outfit: midnight_classic
+  )
+
+ripped_jeans_outfit.save!
+
+suade_boots_outfit = OutfitItem.new(
+  item: suade_boots,
+  outfit: midnight_classic
+  )
+
+suade_boots_outfit.save!
+
+black_shirt_outfit = OutfitItem.new(
+  item: black_shirt,
+  outfit: midnight_classic
+  )
+
+black_shirt_outfit.save!
 

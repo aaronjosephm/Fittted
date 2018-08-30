@@ -11,16 +11,18 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
+        <div class="navbar-items">
+          <div class="shopping-bag-container">
+          <%= link_to order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <%= image_tag "shoppingbag.png", size: "62x30", style: "position: absolute;" %>
+            <div class="text-block"><%= OrderOutfit.where(order_id: current_user.cart.id).count %></div>
+          <% end %>
+          </div>
 
-
-        <%= link_to order_show_url(current_user.cart.id), method: :get, class: "navbar-wagon-item navbar-wagon-link" do %>
-          <%= image_tag "shoppingbag.png", size: "62x30" %>
-        <% end %>
-
-        <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-        <% end %>
-
+          <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out" style="margin-left: 100px;"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </div>
       <% else %>
         <!-- Login link (when logged out) -->
 
