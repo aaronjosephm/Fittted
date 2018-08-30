@@ -149,7 +149,7 @@ jumper_sweater = Item.new(
 jumper_sweater.save!
 
 brown_boots = Item.new(
-  name: "Brown hiking boots",
+  name: "Brown boots",
   price: 100,
   description: "With a technical look from the revolutionary '90s Equipment series, these shoes mix modern materials with retro runner style. They feature a sock-like knit upper and supportive TPU wings that wrap the heel. Detailed with textile 3-Stripes that merge with the moulded 3-Stripes on the midsole.",
   photo: "https://www.julesb.co.uk/images/products/1504688424-52154400.jpg"
