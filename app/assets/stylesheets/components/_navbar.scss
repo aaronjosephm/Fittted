@@ -4,7 +4,7 @@
   // background: #3A475B;
   // transition: all 0.3s ease;
   height: 70px;
-  padding: 10px 15px;
+  padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,17 +15,11 @@
 }
 
 .navbar-placeholder {
-  height: 70px;
+  height: 60px;
 }
 
 .navbar-wagon i {
   color: #E0D9C6;
-}
-
-/* Logo */
-.navbar-wagon-brand img {
-  // height: 50px;
-  margin-right: 10vw;
 }
 
 /* User Avatar */

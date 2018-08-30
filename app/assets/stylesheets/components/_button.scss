@@ -87,37 +87,61 @@
   border-radius: 0 !important;
 }
 
+.button {
+  text-decoration: none;
+  font-size: $header3;
+  font-family: "Roboto";
+  font-weight: 400;
+  line-spacing: 1px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  box-shadow: $shadow;
+  transition: all 200ms ease;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.95;
+    box-shadow: $shadow-hover;
+  }
+}
+
+.button-beige {
+  color: white;
+  background: $beige-brand;
+}
+
 .stripe-button-el {
   background-image: linear-gradient(#C3AC96 80%,#C3AC96 80%) !important;
   border-radius: 3px !important;
   background-color: #C3AC96 !important;
-  opacity: 0.8 !important;
+  // opacity: 0.8 !important;
+  text-align: center;
 }
 
-.stripe-button-el:after {
-}
+// .stripe-button-el:after {
+// }
 
 .stripe-button-el span {
   font-weight: !important;
   background-color: #C3AC96 !important;
   text-shadow: 0 0px 0 rgba(0,0,0,0.25) !important;
-  opacity: 0.8 !important;
   font-family: "Roboto" !important;
+  font-size: 18px !important;
   background-image: linear-gradient(#C3AC96 80%, #C3AC96 80%, #C3AC96 80%) !important;
-  font-size: 15px !important;
   color: white !important;
   height: 5vh !important;
-  width: 10vw !important;
+  width: 12vw !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease !important;
 }
 
 .stripe-button-el:hover span {
-  color: black !important;
+  color: white !important;
   // opacity: 0.5 !important;
-  transition: all 0.9s ease 0s !important;
   text-decoration: none !important;
+  opacity: 0.9 !important;
 }
 
 .place-order-button {
@@ -145,6 +169,7 @@
 
 .place-order-wrapper > a {
   text-decoration: none;
+  background: red;
 }
 
 .delete-order-outfit-button {
@@ -181,14 +206,23 @@
 // }
 
 .delete-button-container > a {
-  position: relative;
-  color: #000;
-  text-decoration: underline;
+  position: absolute;
+  color: $blue-brand;
+  text-decoration: none;
+  padding: 3px 6px;
+  border: 1px solid $blue-brand;
+  font-size: 12px;
+  // opacity: 0.9;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  bottom: 20px;
+  left: 3vw;
 }
 
 .delete-button-container > a:hover {
-  color: #000;
-  opacity: 0.6;
+  // color: #000;
+  background: $blue-brand;
+  color: white;
   text-decoration: none;
 }
 

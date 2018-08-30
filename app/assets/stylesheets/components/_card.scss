@@ -11,7 +11,7 @@
 }
 
 .home-card:hover {
-  transform: scale(1.02);
+  // transform: scale(1.01);
   overflow: hidden;
 }
 
@@ -23,13 +23,13 @@
   background-image: asset-url('FormalMain2.jpg');
 }
 
-#casual:hover {
-  transform: scale(1.02);
-}
+// #casual:hover {
+//   transform: scale(1.01);
+// }
 
-#formal:hover {
-  transform: scale(1.02);
-}
+// #formal:hover {
+//   transform: scale(1.01);
+// }
 
 #date-night {
   background-image: asset-url("casual.jpeg");
@@ -37,7 +37,7 @@
 
 #date-night:hover {
   background-image: asset-url("casual.jpeg");
-  background-position: 30% 70%;
+  // background-position: 30% 70%;
 }
 
 #weekend-chill {
@@ -72,8 +72,7 @@
 }
 
 .home-card-gradient:hover {
-  transition: all 1s ease 0s;
-  background-image: linear-gradient(rgba(40, 40, 40, 0.4), rgba(40, 40, 40, 0.1));
+  background-image: linear-gradient(rgba(40, 40, 40, 0.5), rgba(40, 40, 40, 0.2));
 }
 
 
@@ -202,6 +201,9 @@ hr {
   font-size: $text-small;
   opacity: 0;
   transition: all 300ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     background-image: linear-gradient(rgba(80, 80, 80, 0.9), rgba(80, 80, 80, 0.9));
     opacity: 0.98;
@@ -323,8 +325,9 @@ hr {
   text-align: left;
   padding-left: 3vw;
   box-shadow: $shadow;
-  height: 38vh;
+  height: 45vh;
   background-color: white;
+  position: relative;
 }
 
 .orders-card {
@@ -354,6 +357,6 @@ hr {
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
-  height: 38vh;
+  height: 45vh;
 }
 
