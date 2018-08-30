@@ -25,6 +25,7 @@
             </div>
           <% end %>
         <% end %>
+        <br>
         <p>$<%= Outfit.find(orderOutfit.outfit_id).price %>.00</p>
         <div class="delete-button-container">
           <%= link_to "Remove", delete_outfit_order_path(orderOutfit), method: :delete %>

@@ -13,4 +13,8 @@ class Item < ApplicationRecord
     # (6..13).to_a
     ["Small", "Medium", "Large"]
   end
+
+  def shoe_sizes
+    ("6".."13").to_a
+  end
 end
