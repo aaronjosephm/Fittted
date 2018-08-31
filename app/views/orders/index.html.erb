@@ -13,13 +13,13 @@
     </div>
   </div>
   <div class="col-md-6" style="text-align: center; padding-right: 25vw; padding-left: 0; margin-top: 5vh;">
-      <div class="orders-card" style="padding-left: 0; width: 35vw !important;">
-        <p style="text-align: center;"><strong>Items on this order:</strong></p>
+      <div class="orders-card" style="padding-left: 0; width: 35vw;">
+        <h4 class="margin-top-5 margin-bottom-10" style="text-align: center;"><strong>Items on this order</strong></h4>
         <% total_price = 0 %>
 
         <% OrderOutfit.where(order_id: order.id).each do |orderOutfit| %>
           <div class="order-items">
-            <%= Outfit.where(id: orderOutfit.outfit_id).first.name %>
+            <p><%= Outfit.where(id: orderOutfit.outfit_id).first.name %></p>
             <p>$<%= Outfit.where(id: orderOutfit.outfit_id).first.price %>.00</p>
             <% total_price += Outfit.where(id: orderOutfit.outfit_id).first.price.to_i %>
           </div>
@@ -41,11 +41,11 @@
               </div>
             </div>
 
-
+        <%#raise %>
         <script>
           document.addEventListener("DOMContentLoaded", function(){
 
-            var countDownDate = <%= order.arrival.to_f %>;
+            var countDownDate = <%= order.arrival %>;
 
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -63,8 +63,9 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                var displayString = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
+                document.getElementById("demo").innerHTML = "<h4>" + displayString + "</h4>";
 
                 // If the count down is over, write some text
                 if (distance < 0) {
