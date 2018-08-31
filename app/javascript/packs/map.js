@@ -17,7 +17,7 @@ if (maps) { // don't try to build a map if there's no div#map to inject in
       strokeOpacity: 0.6,
       strokeWeight: 6
     });
-    map.setZoom(14);
+    map.setZoom(12);
   });
 
 }
