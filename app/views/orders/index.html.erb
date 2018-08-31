@@ -13,13 +13,13 @@
     </div>
   </div>
   <div class="col-md-6" style="text-align: center; padding-right: 25vw; padding-left: 0; margin-top: 5vh;">
-      <div class="orders-card" style="padding-left: 0; height: 60vh !important; width: 35vw !important;">
+      <div class="orders-card" style="padding-left: 0; width: 35vw !important;">
         <p style="text-align: center;"><strong>Items on this order:</strong></p>
         <% total_price = 0 %>
 
         <% OrderOutfit.where(order_id: order.id).each do |orderOutfit| %>
           <div class="order-items">
-            <p><%= Outfit.where(id: orderOutfit.outfit_id).first.name %></p>
+            <%= Outfit.where(id: orderOutfit.outfit_id).first.name %>
             <p>$<%= Outfit.where(id: orderOutfit.outfit_id).first.price %>.00</p>
             <% total_price += Outfit.where(id: orderOutfit.outfit_id).first.price.to_i %>
           </div>
@@ -27,13 +27,14 @@
 
           <% if order.status == "pending" %>
             <div class="text-center">
-              <p class="btn btn-danger"><%= order.status %></p>
+              <p class="btn btn-danger"><%= order.status.capitalize %></p>
             </div>
           <% else %>
-            <div class="flex justify-around text-center">
-              <p class="btn btn-success"><%= order.status %></p>
+            <div class="flex flex-direction-column justify-around align-center padding-bottom-2">
+              <p class="button button-blue" style="padding: 1.5% 4%"><%= order.status.capitalize %></p>
 
-              <p style="display: inline-table;"><div id="demo"></div></p>
+              <p>You will receive your order in</p>
+              <div id="demo"></div>
 
               <div class="delete-button-container padding-bottom-2" >
                 <% link_to "Remove", delete_order_url(id: order.id), method: :delete %>
@@ -42,34 +43,36 @@
 
 
         <script>
+          document.addEventListener("DOMContentLoaded", function(){
 
-          var countDownDate = <%= order.arrival.to_f %>;
+            var countDownDate = <%= order.arrival.to_f %>;
 
-          // Update the count down every 1 second
-          var x = setInterval(function() {
+            // Update the count down every 1 second
+            var x = setInterval(function() {
 
-              // Get todays date and time
-              var now = new Date().getTime();
+                // Get todays date and time
+                var now = new Date().getTime();
 
-              // Find the distance between now and the count down date
-              var distance = countDownDate - now;
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
 
-              // Time calculations for days, hours, minutes and seconds
-              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-              // Output the result in an element with id="demo"
-              document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-              + minutes + "m " + seconds + "s ";
+                // Output the result in an element with id="demo"
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
 
-              // If the count down is over, write some text
-              if (distance < 0) {
-                  clearInterval(x);
-                  document.getElementById("demo").innerHTML = "EXPIRED";
-              }
-          }, 1000);
+                // If the count down is over, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+          })
         </script>
 
 

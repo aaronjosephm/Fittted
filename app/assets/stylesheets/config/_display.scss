@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flex-direction-column {
+  flex-direction: column;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -16,6 +20,14 @@
 
 .w-100 {
   width: 100%;
+}
+
+.mw-20 {
+  max-width: 20%;
+}
+
+.margin-top-5 {
+  margin-top: 5%;
 }
 
 .padding-bottom-2 {
