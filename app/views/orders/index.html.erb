@@ -1,4 +1,4 @@
-<h1 style="margin-top: 15vh; text-align: center;"> You currently have <%= @orders.size %> orders. </h1>
+<h3 style="margin-top: 15vh; text-align: center;"> You currently have <%= @orders.size %> order<%= @orders.size > 1 ? "s" : "" %> </h3>
 <% @orders.each do |order| %>
 
 <div class="row" style="display: flex;">
@@ -17,13 +17,15 @@
         <h4 class="margin-top-5 margin-bottom-10" style="text-align: center;"><strong>Items on this order</strong></h4>
         <% total_price = 0 %>
 
-        <% OrderOutfit.where(order_id: order.id).each do |orderOutfit| %>
-          <div class="order-items">
-            <p><%= Outfit.where(id: orderOutfit.outfit_id).first.name %></p>
-            <p>$<%= Outfit.where(id: orderOutfit.outfit_id).first.price %>.00</p>
-            <% total_price += Outfit.where(id: orderOutfit.outfit_id).first.price.to_i %>
-          </div>
-        <% end %>
+        <div class="h-30">
+          <% OrderOutfit.where(order_id: order.id).each do |orderOutfit| %>
+            <div class="order-items">
+              <p><%= Outfit.where(id: orderOutfit.outfit_id).first.name %></p>
+              <p>$<%= Outfit.where(id: orderOutfit.outfit_id).first.price %>.00</p>
+              <% total_price += Outfit.where(id: orderOutfit.outfit_id).first.price.to_i %>
+            </div>
+          <% end %>
+        </div>
 
           <% if order.status == "pending" %>
             <div class="text-center">
