@@ -45,7 +45,7 @@
             </div>
 
             <div class="card-content-show">
-              <h3><%= outfit_item.item.name %></h3>
+              <h3><%= outfit_item.item.name.capitalize %></h3>
              <div class="size-select-container">
                <% if !outfit_item.item.name.match("shoe").nil? || !outfit_item.item.name.match("boot").nil? %>
                  <%= select_tag "outfit_items[#{outfit_item.id}]", options_for_select(outfit_item.item.shoe_sizes), class: "size-select" %>
