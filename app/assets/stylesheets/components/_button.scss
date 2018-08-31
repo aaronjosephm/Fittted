@@ -3,7 +3,6 @@
   font-size: $header3;
   font-family: "Roboto";
   font-weight: 400;
-  line-spacing: 1px;
   padding: 15px 20px;
   border-radius: 3px;
   box-shadow: $shadow;
@@ -35,9 +34,9 @@
   }
 }
 
-
-
-
+// .button-shadow {
+//   box-shadow: $shadow;
+// }
 
 
 .add-cart-button {
