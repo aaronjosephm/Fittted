@@ -79,6 +79,6 @@
 
 
 
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_API_KEY"]}" %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=directions&key=#{ENV["GOOGLE_API_KEY"]}" %>
 <%= javascript_pack_tag 'application' %>
 <%= javascript_pack_tag "map" %>
