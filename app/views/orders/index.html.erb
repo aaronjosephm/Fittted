@@ -30,10 +30,7 @@
           <div class="status">
             <p style="color: green;">Current status: <%= order.status %></p>
 
-            <p>Total paid: $<%= total_price.to_s %>.00</p>
-
             <p style="display: inline-table;">Expected arrival: <div id="demo"></div></p>
-
 
             <div class="delete-button-container", style="padding-bottom: 2vh;">
               <% link_to "Remove", delete_order_url(id: order.id), method: :delete %>
